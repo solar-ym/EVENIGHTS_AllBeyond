@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
     private List<Character> characters = new List<Character>();
 
     private int activeCharIndex = 0;
+    public bool inCombat = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

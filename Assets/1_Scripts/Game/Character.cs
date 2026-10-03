@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,7 +42,7 @@ public class Character : MonoBehaviour
         currentHP = health;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (!isSelected)
         {
@@ -91,19 +92,45 @@ public class Character : MonoBehaviour
     }
 
     // COMBAT -----------------------------------------------------------------------
-    protected virtual Vector3 FindEnemyTarget() { return new Vector3(); }
-    protected virtual void UseNormalAttack() { }
-    protected virtual void UseEve() { }
-    protected virtual void UseSkill() { }
+    public List<Collider2D> enemiesInRange = new List<Collider2D>();
+    void FixedUpdate()
+    {
+        enemiesInRange.Clear();
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!enemiesInRange.Contains(collision.collider))
+        {
+            enemiesInRange.Add(collision.collider);
+        }
+    }
+    protected virtual GameObject FindEnemyTarget() { return new GameObject(); }
+    public virtual void UseNormalAttack() { }
+    public virtual void UseEve() { }
+    public virtual void UseSkill() { }
 
     // STAT MANIP -------------------------------------------------------------------
+    public void LevelUp()
+    {
+        health = Mathf.FloorToInt(health * (1 + 0.1f));
+        sp += 10;
 
+        for (int i = 0; i < 5; i++)
+        {
+            int stat = Random.Range(0, 4);
+            int raiseVal = Random.Range(1, 5);
+            CHAR_STATS target = (CHAR_STATS)(stat);
+
+            AlterStat(target, raiseVal);
+        }
+    }
     public void AlterHP(int val)
     {
         currentHP += val;
         currentHP = Mathf.Clamp(currentHP, 0, health);   
 
-        healthCircle.fillAmount = currentHP / health;
+        healthCircle.fillAmount = currentHP / (float)health;
     }
 
     public void AlterStat(CHAR_STATS stat, int val)
@@ -121,6 +148,9 @@ public class Character : MonoBehaviour
                 break;
             case CHAR_STATS.maxHp:
                 health += val;
+                break;
+            default:
+                if (GameDebugger.debugMode) Debug.Log("Alter stat random miss.");
                 break;
         } 
     }

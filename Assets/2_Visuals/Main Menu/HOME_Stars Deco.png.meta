@@ -1,0 +1,2561 @@
+fileFormatVersion: 2
+guid: 578c0e0f69980a842a0fa1c77688550c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9009279022636604257
+    second: HOME_Stars Deco_0
+  - first:
+      213: -7832484633415375959
+    second: HOME_Stars Deco_1
+  - first:
+      213: 3568537309775332283
+    second: HOME_Stars Deco_2
+  - first:
+      213: -6434088089823571727
+    second: HOME_Stars Deco_3
+  - first:
+      213: 4660729991345396873
+    second: HOME_Stars Deco_4
+  - first:
+      213: -7951978449165781297
+    second: HOME_Stars Deco_5
+  - first:
+      213: 4084110661540602750
+    second: HOME_Stars Deco_6
+  - first:
+      213: -1546423702640743548
+    second: HOME_Stars Deco_7
+  - first:
+      213: 4458876968213036819
+    second: HOME_Stars Deco_8
+  - first:
+      213: -2966565932056588321
+    second: HOME_Stars Deco_9
+  - first:
+      213: -9091448148743454242
+    second: HOME_Stars Deco_10
+  - first:
+      213: 5888950735985037018
+    second: HOME_Stars Deco_11
+  - first:
+      213: 1823750099124121142
+    second: HOME_Stars Deco_12
+  - first:
+      213: -3507598845044016650
+    second: HOME_Stars Deco_13
+  - first:
+      213: -3182380613813104242
+    second: HOME_Stars Deco_14
+  - first:
+      213: -2994369151260819238
+    second: HOME_Stars Deco_15
+  - first:
+      213: -4922011031335546797
+    second: HOME_Stars Deco_16
+  - first:
+      213: 5498405353796288833
+    second: HOME_Stars Deco_17
+  - first:
+      213: 6289909903439960887
+    second: HOME_Stars Deco_18
+  - first:
+      213: -8525950463680898502
+    second: HOME_Stars Deco_19
+  - first:
+      213: 5365732822694778460
+    second: HOME_Stars Deco_20
+  - first:
+      213: -5572836262421684894
+    second: HOME_Stars Deco_21
+  - first:
+      213: 9199455157833865342
+    second: HOME_Stars Deco_22
+  - first:
+      213: -5085573722846854912
+    second: HOME_Stars Deco_23
+  - first:
+      213: 357335601643526050
+    second: HOME_Stars Deco_24
+  - first:
+      213: 4688827572067533040
+    second: HOME_Stars Deco_25
+  - first:
+      213: -4940178339852663483
+    second: HOME_Stars Deco_26
+  - first:
+      213: 2398306327835350200
+    second: HOME_Stars Deco_27
+  - first:
+      213: -6035413194993741691
+    second: HOME_Stars Deco_28
+  - first:
+      213: -6751565488264105406
+    second: HOME_Stars Deco_29
+  - first:
+      213: 1157588068032197565
+    second: HOME_Stars Deco_30
+  - first:
+      213: 1599380633916783641
+    second: HOME_Stars Deco_31
+  - first:
+      213: 2229473807557688202
+    second: HOME_Stars Deco_32
+  - first:
+      213: -1166844334482731027
+    second: HOME_Stars Deco_33
+  - first:
+      213: -2602263011139972886
+    second: HOME_Stars Deco_34
+  - first:
+      213: 5000020083752234795
+    second: HOME_Stars Deco_35
+  - first:
+      213: -2025877640888634044
+    second: HOME_Stars Deco_36
+  - first:
+      213: 5692535163813356385
+    second: HOME_Stars Deco_37
+  - first:
+      213: -3267074945441500151
+    second: HOME_Stars Deco_38
+  - first:
+      213: 272335717498717062
+    second: HOME_Stars Deco_39
+  - first:
+      213: -6503458790074089285
+    second: HOME_Stars Deco_40
+  - first:
+      213: 1746293907516214911
+    second: HOME_Stars Deco_41
+  - first:
+      213: -9098316715611180583
+    second: HOME_Stars Deco_42
+  - first:
+      213: 7444306091088296683
+    second: HOME_Stars Deco_43
+  - first:
+      213: -5352309574138719252
+    second: HOME_Stars Deco_44
+  - first:
+      213: -5694044878024545710
+    second: HOME_Stars Deco_45
+  - first:
+      213: 2132381005828286811
+    second: HOME_Stars Deco_46
+  - first:
+      213: -444055689791182661
+    second: HOME_Stars Deco_47
+  - first:
+      213: -2944735079453160426
+    second: HOME_Stars Deco_48
+  - first:
+      213: -3007717508381802776
+    second: HOME_Stars Deco_49
+  - first:
+      213: 306940031036182482
+    second: HOME_Stars Deco_50
+  - first:
+      213: 2955650875889800103
+    second: HOME_Stars Deco_51
+  - first:
+      213: 218400543721323933
+    second: HOME_Stars Deco_52
+  - first:
+      213: -4275883224262406970
+    second: HOME_Stars Deco_53
+  - first:
+      213: -7741980865672218746
+    second: HOME_Stars Deco_54
+  - first:
+      213: 7804954034060610756
+    second: HOME_Stars Deco_55
+  - first:
+      213: 6792604750292444759
+    second: HOME_Stars Deco_56
+  - first:
+      213: -3583192814308686512
+    second: HOME_Stars Deco_57
+  - first:
+      213: 146061971996049401
+    second: HOME_Stars Deco_58
+  - first:
+      213: -3469972116750137020
+    second: HOME_Stars Deco_59
+  - first:
+      213: 2486673627499181726
+    second: HOME_Stars Deco_60
+  - first:
+      213: 8014198347509207016
+    second: HOME_Stars Deco_61
+  - first:
+      213: 2204053420943791452
+    second: HOME_Stars Deco_62
+  - first:
+      213: 2799053426541112674
+    second: HOME_Stars Deco_63
+  - first:
+      213: -6908601662644993794
+    second: HOME_Stars Deco_64
+  - first:
+      213: -6561537336299459624
+    second: HOME_Stars Deco_65
+  - first:
+      213: -7083841332937566338
+    second: HOME_Stars Deco_66
+  - first:
+      213: 1278180859287233359
+    second: HOME_Stars Deco_67
+  - first:
+      213: -9201595999707172235
+    second: HOME_Stars Deco_68
+  - first:
+      213: 259925579846071095
+    second: HOME_Stars Deco_69
+  - first:
+      213: -4546446415280352294
+    second: HOME_Stars Deco_70
+  - first:
+      213: -5074188899781617252
+    second: HOME_Stars Deco_71
+  - first:
+      213: 7121509507592043849
+    second: HOME_Stars Deco_72
+  - first:
+      213: 720577155187689064
+    second: HOME_Stars Deco_73
+  - first:
+      213: -6294034650532713883
+    second: HOME_Stars Deco_74
+  - first:
+      213: -7227556491266081086
+    second: HOME_Stars Deco_75
+  - first:
+      213: -2349790508350197565
+    second: HOME_Stars Deco_76
+  - first:
+      213: -4898941103753750517
+    second: HOME_Stars Deco_77
+  - first:
+      213: 5705452936357110096
+    second: HOME_Stars Deco_78
+  - first:
+      213: 1808640283496742760
+    second: HOME_Stars Deco_79
+  - first:
+      213: -2524122757239555643
+    second: HOME_Stars Deco_80
+  - first:
+      213: -6494990054467333506
+    second: HOME_Stars Deco_81
+  - first:
+      213: 7117653421158935772
+    second: HOME_Stars Deco_82
+  - first:
+      213: 591259679581026585
+    second: HOME_Stars Deco_83
+  - first:
+      213: 7582147807604838469
+    second: HOME_Stars Deco_84
+  - first:
+      213: -176032611413084930
+    second: HOME_Stars Deco_85
+  - first:
+      213: 3490921067820330170
+    second: HOME_Stars Deco_86
+  - first:
+      213: -2790022902255458179
+    second: HOME_Stars Deco_87
+  - first:
+      213: -5912825137326177708
+    second: HOME_Stars Deco_88
+  - first:
+      213: 1845897165484612102
+    second: HOME_Stars Deco_89
+  - first:
+      213: -2237347670080900031
+    second: HOME_Stars Deco_90
+  - first:
+      213: -737910750517509332
+    second: HOME_Stars Deco_91
+  - first:
+      213: 5758418848789204141
+    second: HOME_Stars Deco_92
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HOME_Stars Deco_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1415
+        width: 454
+        height: 979
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f94ed5d467c98f280800000000000000
+      internalID: -9009279022636604257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1777
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a3229469bc6d4390800000000000000
+      internalID: -7832484633415375959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 2253
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb303ecb6cdf58130800000000000000
+      internalID: 3568537309775332283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_3
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1909
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f09e78b8f685b6a0800000000000000
+      internalID: -6434088089823571727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_4
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 2186
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98cd628cb3d3ea040800000000000000
+      internalID: 4660729991345396873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_5
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1630
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc679eb5bb5e4a190800000000000000
+      internalID: -7951978449165781297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_6
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1852
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e736384120dada830800000000000000
+      internalID: 4084110661540602750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 1443
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48baad3f5dff98ae0800000000000000
+      internalID: -1546423702640743548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_8
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1864
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31f328b7afc11ed30800000000000000
+      internalID: 4458876968213036819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_9
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1571
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdfcdf89004a4d6d0800000000000000
+      internalID: -2966565932056588321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_10
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 1648
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed18348c310b4d180800000000000000
+      internalID: -9091448148743454242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_11
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1791
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adec92e4e71c9b150800000000000000
+      internalID: 5888950735985037018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_12
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 1854
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e60617d034f4910800000000000000
+      internalID: 1823750099124121142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_13
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 1997
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9b49a3f61825fc0800000000000000
+      internalID: -3507598845044016650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_14
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 2080
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e81949551b9e5d3d0800000000000000
+      internalID: -3182380613813104242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_15
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1791
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad006bc2f1dd176d0800000000000000
+      internalID: -2994369151260819238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_16
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 2155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 350d0b08b0181bbb0800000000000000
+      internalID: -4922011031335546797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_17
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1675
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141422899824e4c40800000000000000
+      internalID: 5498405353796288833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_18
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 2181
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b10c75bbf3a4750800000000000000
+      internalID: 6289909903439960887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_19
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 1965
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a19b7c93dbda980800000000000000
+      internalID: -8525950463680898502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_20
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 1555
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c565068c299e67a40800000000000000
+      internalID: 5365732822694778460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_21
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 2042
+        width: 7
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d90fa02fe49a2b0800000000000000
+      internalID: -5572836262421684894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_22
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 1705
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7892d9a9b70baf70800000000000000
+      internalID: 9199455157833865342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_23
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1957
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00107a2c4a96c69b0800000000000000
+      internalID: -5085573722846854912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_24
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1684
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a7109126d285f400800000000000000
+      internalID: 357335601643526050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_25
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 2130
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f0842695df021140800000000000000
+      internalID: 4688827572067533040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_26
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 2125
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 545c00e59f5f07bb0800000000000000
+      internalID: -4940178339852663483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_27
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 2267
+        width: 101
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4923df5ee784120800000000000000
+      internalID: 2398306327835350200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_28
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 2157
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58051b71da7ed3ca0800000000000000
+      internalID: -6035413194993741691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_29
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 1759
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2423b32b5fe9d42a0800000000000000
+      internalID: -6751565488264105406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_30
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1970
+        width: 30
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db33a47f634901010800000000000000
+      internalID: 1157588068032197565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_31
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 1872
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91cbf317634223610800000000000000
+      internalID: 1599380633916783641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_32
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 1572
+        width: 11
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b738f9d9ea0fe10800000000000000
+      internalID: 2229473807557688202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_33
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2185
+        width: 56
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: defcafe82498ecfe0800000000000000
+      internalID: -1166844334482731027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_34
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1678
+        width: 14
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae01dd82497e2ebd0800000000000000
+      internalID: -2602263011139972886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_35
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 2024
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2feed166c3a36540800000000000000
+      internalID: 5000020083752234795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_36
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 1924
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4453d68e403a2e3e0800000000000000
+      internalID: -2025877640888634044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_37
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 2054
+        width: 157
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163e3863292fffe40800000000000000
+      internalID: 5692535163813356385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_38
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1612
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 904716695a409a2d0800000000000000
+      internalID: -3267074945441500151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_39
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1662
+        width: 65
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 683892564e787c300800000000000000
+      internalID: 272335717498717062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_40
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 1812
+        width: 230
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb00e3eefa21fb5a0800000000000000
+      internalID: -6503458790074089285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_41
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 1551
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7eceee7e051c3810800000000000000
+      internalID: 1746293907516214911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_42
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 1958
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d13fffe6294cb180800000000000000
+      internalID: -9098316715611180583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_43
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 1982
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bea389eb2fc7f4760800000000000000
+      internalID: 7444306091088296683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_44
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1599
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce31a81dcc6c8b5b0800000000000000
+      internalID: -5352309574138719252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_45
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 2018
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25ae63e0a50baf0b0800000000000000
+      internalID: -5694044878024545710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_46
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 1631
+        width: 138
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b596f2a1a3db79d10800000000000000
+      internalID: 2132381005828286811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_47
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1782
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb8618de3b566d9f0800000000000000
+      internalID: -444055689791182661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_48
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1764
+        width: 8
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61c009f0c033227d0800000000000000
+      internalID: -2944735079453160426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_49
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 2122
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eefd289cd07246d0800000000000000
+      internalID: -3007717508381802776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_50
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 2014
+        width: 39
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df424df458724400800000000000000
+      internalID: 306940031036182482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_51
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 2109
+        width: 33
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a3db79dfc4940920800000000000000
+      internalID: 2955650875889800103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_52
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 2310
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9df24b232ae70300800000000000000
+      internalID: 218400543721323933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_53
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 1690
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc89c4bcd209a4c0800000000000000
+      internalID: -4275883224262406970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_54
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 2218
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6877cb3eb65fe8490800000000000000
+      internalID: -7741980865672218746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_55
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1754
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc4f607754c05c60800000000000000
+      internalID: 7804954034060610756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_56
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 1666
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 756efc8180e244e50800000000000000
+      internalID: 6792604750292444759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_57
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1999
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0550665be11f54ec0800000000000000
+      internalID: -3583192814308686512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_58
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 1882
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff7404f69ae60200800000000000000
+      internalID: 146061971996049401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_59
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 1775
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44909989ebe28dfc0800000000000000
+      internalID: -3469972116750137020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_60
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1910
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e96bb6f3d70728220800000000000000
+      internalID: 2486673627499181726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_61
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 1996
+        width: 134
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef0fce9fe6283f60800000000000000
+      internalID: 8014198347509207016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_62
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1606
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c55d655a8ee569e10800000000000000
+      internalID: 2204053420943791452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_63
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 1660
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26da25ce24c38d620800000000000000
+      internalID: 2799053426541112674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_64
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 1952
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef04f532467bf10a0800000000000000
+      internalID: -6908601662644993794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_65
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 1723
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db6861ae8cb0f4a0800000000000000
+      internalID: -6561537336299459624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_66
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 1889
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77d609e6d321bd90800000000000000
+      internalID: -7083841332937566338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_67
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 1643
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43e48c28b20db110800000000000000
+      internalID: 1278180859287233359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_68
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1610
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5727cceb03d5d4080800000000000000
+      internalID: -9201595999707172235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_69
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 1369
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73333ce00f07b9300800000000000000
+      internalID: 259925579846071095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_70
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1350
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad3dddac217c7e0c0800000000000000
+      internalID: -4546446415280352294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_71
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 1333
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c995941741cd499b0800000000000000
+      internalID: -5074188899781617252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_72
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1308
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d37907a2fa4d260800000000000000
+      internalID: 7121509507592043849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_73
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 1163
+        width: 150
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8664938da11000a00800000000000000
+      internalID: 720577155187689064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_74
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1276
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56a6ff225d817a8a0800000000000000
+      internalID: -6294034650532713883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_75
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 1245
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce34081aaf82bb90800000000000000
+      internalID: -7227556491266081086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_76
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1235
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0b33d7bfdd36fd0800000000000000
+      internalID: -2349790508350197565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_77
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1100
+        width: 34
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0892379507730cb0800000000000000
+      internalID: -4898941103753750517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_78
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1139
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05166428737dd2f40800000000000000
+      internalID: 5705452936357110096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_79
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1122
+        width: 17
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86ff84851c4991910800000000000000
+      internalID: 1808640283496742760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_80
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1115
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c9b145c9b388fcd0800000000000000
+      internalID: -2524122757239555643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_81
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1122
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7297c715f82dd5a0800000000000000
+      internalID: -6494990054467333506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_82
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 1199
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdca58a531cf6c260800000000000000
+      internalID: 7117653421158935772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_83
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1042
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9193073cb83943800800000000000000
+      internalID: 591259679581026585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_84
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 1048
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5401bc25243393960800000000000000
+      internalID: 7582147807604838469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_85
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1027
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef4b6d7c54b9e8df0800000000000000
+      internalID: -176032611413084930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_86
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 977
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abcab5a273e327030800000000000000
+      internalID: 3490921067820330170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_87
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 968
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78ebdbd3f8d749d0800000000000000
+      internalID: -2790022902255458179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_88
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 903
+        width: 26
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4524ca67ddc61fda0800000000000000
+      internalID: -5912825137326177708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_89
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 841
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60a5c9821b1fd9910800000000000000
+      internalID: 1845897165484612102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_90
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 790
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144b7c5e52853f0e0800000000000000
+      internalID: -2237347670080900031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_91
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 718
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23467ff41a62c5f0800000000000000
+      internalID: -737910750517509332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOME_Stars Deco_92
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 683
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac8efdfe630aef40800000000000000
+      internalID: 5758418848789204141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      HOME_Stars Deco_0: -9009279022636604257
+      HOME_Stars Deco_1: -7832484633415375959
+      HOME_Stars Deco_10: -9091448148743454242
+      HOME_Stars Deco_11: 5888950735985037018
+      HOME_Stars Deco_12: 1823750099124121142
+      HOME_Stars Deco_13: -3507598845044016650
+      HOME_Stars Deco_14: -3182380613813104242
+      HOME_Stars Deco_15: -2994369151260819238
+      HOME_Stars Deco_16: -4922011031335546797
+      HOME_Stars Deco_17: 5498405353796288833
+      HOME_Stars Deco_18: 6289909903439960887
+      HOME_Stars Deco_19: -8525950463680898502
+      HOME_Stars Deco_2: 3568537309775332283
+      HOME_Stars Deco_20: 5365732822694778460
+      HOME_Stars Deco_21: -5572836262421684894
+      HOME_Stars Deco_22: 9199455157833865342
+      HOME_Stars Deco_23: -5085573722846854912
+      HOME_Stars Deco_24: 357335601643526050
+      HOME_Stars Deco_25: 4688827572067533040
+      HOME_Stars Deco_26: -4940178339852663483
+      HOME_Stars Deco_27: 2398306327835350200
+      HOME_Stars Deco_28: -6035413194993741691
+      HOME_Stars Deco_29: -6751565488264105406
+      HOME_Stars Deco_3: -6434088089823571727
+      HOME_Stars Deco_30: 1157588068032197565
+      HOME_Stars Deco_31: 1599380633916783641
+      HOME_Stars Deco_32: 2229473807557688202
+      HOME_Stars Deco_33: -1166844334482731027
+      HOME_Stars Deco_34: -2602263011139972886
+      HOME_Stars Deco_35: 5000020083752234795
+      HOME_Stars Deco_36: -2025877640888634044
+      HOME_Stars Deco_37: 5692535163813356385
+      HOME_Stars Deco_38: -3267074945441500151
+      HOME_Stars Deco_39: 272335717498717062
+      HOME_Stars Deco_4: 4660729991345396873
+      HOME_Stars Deco_40: -6503458790074089285
+      HOME_Stars Deco_41: 1746293907516214911
+      HOME_Stars Deco_42: -9098316715611180583
+      HOME_Stars Deco_43: 7444306091088296683
+      HOME_Stars Deco_44: -5352309574138719252
+      HOME_Stars Deco_45: -5694044878024545710
+      HOME_Stars Deco_46: 2132381005828286811
+      HOME_Stars Deco_47: -444055689791182661
+      HOME_Stars Deco_48: -2944735079453160426
+      HOME_Stars Deco_49: -3007717508381802776
+      HOME_Stars Deco_5: -7951978449165781297
+      HOME_Stars Deco_50: 306940031036182482
+      HOME_Stars Deco_51: 2955650875889800103
+      HOME_Stars Deco_52: 218400543721323933
+      HOME_Stars Deco_53: -4275883224262406970
+      HOME_Stars Deco_54: -7741980865672218746
+      HOME_Stars Deco_55: 7804954034060610756
+      HOME_Stars Deco_56: 6792604750292444759
+      HOME_Stars Deco_57: -3583192814308686512
+      HOME_Stars Deco_58: 146061971996049401
+      HOME_Stars Deco_59: -3469972116750137020
+      HOME_Stars Deco_6: 4084110661540602750
+      HOME_Stars Deco_60: 2486673627499181726
+      HOME_Stars Deco_61: 8014198347509207016
+      HOME_Stars Deco_62: 2204053420943791452
+      HOME_Stars Deco_63: 2799053426541112674
+      HOME_Stars Deco_64: -6908601662644993794
+      HOME_Stars Deco_65: -6561537336299459624
+      HOME_Stars Deco_66: -7083841332937566338
+      HOME_Stars Deco_67: 1278180859287233359
+      HOME_Stars Deco_68: -9201595999707172235
+      HOME_Stars Deco_69: 259925579846071095
+      HOME_Stars Deco_7: -1546423702640743548
+      HOME_Stars Deco_70: -4546446415280352294
+      HOME_Stars Deco_71: -5074188899781617252
+      HOME_Stars Deco_72: 7121509507592043849
+      HOME_Stars Deco_73: 720577155187689064
+      HOME_Stars Deco_74: -6294034650532713883
+      HOME_Stars Deco_75: -7227556491266081086
+      HOME_Stars Deco_76: -2349790508350197565
+      HOME_Stars Deco_77: -4898941103753750517
+      HOME_Stars Deco_78: 5705452936357110096
+      HOME_Stars Deco_79: 1808640283496742760
+      HOME_Stars Deco_8: 4458876968213036819
+      HOME_Stars Deco_80: -2524122757239555643
+      HOME_Stars Deco_81: -6494990054467333506
+      HOME_Stars Deco_82: 7117653421158935772
+      HOME_Stars Deco_83: 591259679581026585
+      HOME_Stars Deco_84: 7582147807604838469
+      HOME_Stars Deco_85: -176032611413084930
+      HOME_Stars Deco_86: 3490921067820330170
+      HOME_Stars Deco_87: -2790022902255458179
+      HOME_Stars Deco_88: -5912825137326177708
+      HOME_Stars Deco_89: 1845897165484612102
+      HOME_Stars Deco_9: -2966565932056588321
+      HOME_Stars Deco_90: -2237347670080900031
+      HOME_Stars Deco_91: -737910750517509332
+      HOME_Stars Deco_92: 5758418848789204141
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

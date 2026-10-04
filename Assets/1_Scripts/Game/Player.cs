@@ -27,6 +27,14 @@ public class Player : MonoBehaviour
     private void Update()
     {
         xpBarFill.fillAmount = experiencePts / (float)nextExpCap;
+
+        foreach (Character character in characters)
+        {
+            if (Vector3.Distance(characters[activeCharIndex].transform.position, character.transform.position) >= 10.0f)
+            {
+                inCombat = false; break;
+            }
+        }
     }
 
     // XP GAIN ---------------------------------------------------------------

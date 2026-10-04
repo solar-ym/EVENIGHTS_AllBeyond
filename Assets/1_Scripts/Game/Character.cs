@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +10,7 @@ public class Character : MonoBehaviour
     [SerializeField] FixedJoystick joystick;
     [SerializeField] private float speed = 2.5f;
     [SerializeField] private float trackDistance = 1.5f;
+    [SerializeField] private float enemyTrackDistance = 1.5f;
 
     [Header("Selection")]
     public bool isSelected = false;
@@ -15,11 +18,6 @@ public class Character : MonoBehaviour
     // Visuals
     public SpriteRenderer spriteRenderer;
     private Animator animator;
-
-    // Movement
-    public bool isMoving = false;
-    private Player activePlayer;
-    private GameObject target;
 
     // Stats
     [Header("Stats")]
@@ -29,6 +27,12 @@ public class Character : MonoBehaviour
     [SerializeField] private int resist = 5;
     [SerializeField] private int sp = 0;
     private int currentHP = 100;
+
+    // Movement
+    [Header("View Only")]
+    public bool isMoving = false;
+    protected Player activePlayer;
+    public GameObject target;
 
     [Header("Visual Refs")]
     [SerializeField] private Image healthCircle; 
@@ -46,7 +50,14 @@ public class Character : MonoBehaviour
     {
         if (!isSelected)
         {
-            if (!activePlayer.inCombat) target = activePlayer.GetActiveCharacter().gameObject;
+            if (!activePlayer.inCombat)
+            {
+                target = activePlayer.GetActiveCharacter().gameObject;
+            }
+            else
+            {
+                FindEnemyTarget();
+            }
             TrackActiveTarget();
             animator.SetBool("isMoving", isMoving);
             return;
@@ -74,8 +85,14 @@ public class Character : MonoBehaviour
 
         spriteRenderer.flipX = newDir.x > 0 ? true : false;
 
-        if (Vector2.Distance(trackPos, this.transform.position) >= trackDistance)
+        float dist = activePlayer.inCombat ? enemyTrackDistance : trackDistance;
+        float distanceToTarget = Vector2.Distance(trackPos, this.transform.position);
+
+
+        if (distanceToTarget >= dist)
         {
+            if (activePlayer.inCombat && distanceToTarget < enemyTrackDistance - 1.5f) newDir *= -1;
+
             transform.position += newDir * speed * Time.deltaTime;
             isMoving = true;
         } 
@@ -98,17 +115,27 @@ public class Character : MonoBehaviour
         enemiesInRange.Clear();
     }
 
-    void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!enemiesInRange.Contains(collision.collider))
+        if (!enemiesInRange.Contains(collision) && collision.gameObject.tag == "Enemy")
         {
-            enemiesInRange.Add(collision.collider);
+            enemiesInRange.Add(collision);
         }
     }
-    protected virtual GameObject FindEnemyTarget() { return new GameObject(); }
+
+    protected virtual void FindEnemyTarget() { }
     public virtual void UseNormalAttack() { }
     public virtual void UseEve() { }
     public virtual void UseSkill() { }
+
+    public void StartCombat()
+    {
+        activePlayer.inCombat = true;
+    }
+    public void EndCombat()
+    {
+        activePlayer.inCombat = false;
+    }
 
     // STAT MANIP -------------------------------------------------------------------
     public void LevelUp()

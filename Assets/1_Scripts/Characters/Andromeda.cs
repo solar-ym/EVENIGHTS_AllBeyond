@@ -24,10 +24,15 @@ public class Andromeda : Character
 
     }
 
-    protected override GameObject FindEnemyTarget() 
+    protected override void FindEnemyTarget() 
     {
+        if (enemiesInRange.Count == 0) return;
+
         float distance = circleCollider.radius;
         GameObject min = enemiesInRange[0].gameObject;
+        int minIndex = 0;
+
+        int i = 0;
 
         foreach (Collider2D enemy in enemiesInRange)
         {
@@ -37,10 +42,12 @@ public class Andromeda : Character
                 Vector3.Distance(transform.position, min.transform.position)
                 ) {
                 min = enemy.gameObject;
+                minIndex = i;
             }
+            i++;
         }
 
-        return min;
+        if (activePlayer.inCombat) target = enemiesInRange[minIndex].gameObject;
     }
     public override void UseNormalAttack() { }
     public override void UseEve() { }

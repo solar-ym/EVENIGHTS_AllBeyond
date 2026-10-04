@@ -1631,7 +1631,8 @@ GameObject:
   - component: {fileID: 716157703}
   - component: {fileID: 716157706}
   - component: {fileID: 716157707}
-  m_Layer: 0
+  - component: {fileID: 716157708}
+  m_Layer: 3
   m_Name: Shai
   m_TagString: Character
   m_Icon: {fileID: 0}
@@ -1721,7 +1722,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -748626557
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7287619372497824471, guid: 3035d9b719410f74680828b320e42b4b, type: 3}
@@ -1749,14 +1750,16 @@ MonoBehaviour:
   joystick: {fileID: 1366843196}
   speed: 10
   trackDistance: 7
+  enemyTrackDistance: 8
   isSelected: 0
   spriteRenderer: {fileID: 0}
-  isMoving: 0
   health: 100
   attack: 8
   magic: 6
   resist: 6
   sp: 3
+  isMoving: 0
+  target: {fileID: 0}
   healthCircle: {fileID: 1865638977}
   enemiesInRange: []
 --- !u!50 &716157706
@@ -1816,13 +1819,49 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.05189997, y: -0.077849865}
   m_Size: {x: 1.235802, y: 3.2643003}
   m_Direction: 0
+--- !u!58 &716157708
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716157701}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 9
 --- !u!1 &754209462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,12 +1871,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 754209463}
-  - component: {fileID: 754209466}
+  - component: {fileID: 754209470}
   - component: {fileID: 754209464}
   - component: {fileID: 754209465}
   - component: {fileID: 754209467}
   - component: {fileID: 754209468}
-  m_Layer: 0
+  - component: {fileID: 754209469}
+  m_Layer: 3
   m_Name: Andromeda
   m_TagString: Character
   m_Icon: {fileID: 0}
@@ -1853,7 +1893,7 @@ Transform:
   m_GameObject: {fileID: 754209462}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6200001, y: 3.23, z: 0}
+  m_LocalPosition: {x: 0.6200001, y: 6.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1904,8 +1944,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -748626557
-  m_SortingLayer: 1
+  m_SortingLayerID: 1153193755
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2146325261911611826, guid: 3035d9b719410f74680828b320e42b4b, type: 3}
@@ -1940,31 +1980,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &754209466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754209462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dec3e55ba4f1354baeeec9d22d95445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player
-  joystick: {fileID: 1366843196}
-  speed: 6
-  trackDistance: 2.8
-  isSelected: 1
-  spriteRenderer: {fileID: 0}
-  isMoving: 0
-  health: 100
-  attack: 4
-  magic: 10
-  resist: 6
-  sp: 3
-  healthCircle: {fileID: 662582201}
-  enemiesInRange: []
 --- !u!50 &754209467
 Rigidbody2D:
   serializedVersion: 5
@@ -2022,13 +2037,80 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.010399163, y: -0.051995873}
   m_Size: {x: 1.4169196, y: 3.2480233}
   m_Direction: 0
+--- !u!58 &754209469
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754209462}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 7
+--- !u!114 &754209470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754209462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ccfcafb8eb71941b4299a4578434de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Andromeda
+  joystick: {fileID: 1366843196}
+  speed: 2.5
+  trackDistance: 1.5
+  enemyTrackDistance: 6
+  isSelected: 1
+  spriteRenderer: {fileID: 0}
+  health: 100
+  attack: 4
+  magic: 10
+  resist: 6
+  sp: 3
+  isMoving: 0
+  target: {fileID: 0}
+  healthCircle: {fileID: 662582201}
+  enemiesInRange: []
+  circleCollider: {fileID: 754209469}
+  normalCD: 0.5
+  skillCD: 10
+  eveCD: 15
 --- !u!1 &754870580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2683,9 +2765,10 @@ GameObject:
   - component: {fileID: 1172546967}
   - component: {fileID: 1172546968}
   - component: {fileID: 1172546969}
+  - component: {fileID: 1172546970}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2751,7 +2834,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1839018889
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -430530761823899572, guid: 5f9a3cb337d6ce34bb9d629389834f36, type: 3}
@@ -2817,13 +2900,13 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 5, y: 5}
-  m_Direction: 0
+  m_Size: {x: 3.04, y: 1.93}
+  m_Direction: 1
 --- !u!50 &1172546968
 Rigidbody2D:
   serializedVersion: 5
@@ -2873,6 +2956,42 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &1172546970
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172546963}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 7
 --- !u!1 &1189878595
 GameObject:
   m_ObjectHideFlags: 0
@@ -4041,7 +4160,8 @@ GameObject:
   - component: {fileID: 1650880986}
   - component: {fileID: 1650880989}
   - component: {fileID: 1650880990}
-  m_Layer: 0
+  - component: {fileID: 1650880991}
+  m_Layer: 3
   m_Name: Claure
   m_TagString: Character
   m_Icon: {fileID: 0}
@@ -4131,7 +4251,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -748626557
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -279133644238819022, guid: 3035d9b719410f74680828b320e42b4b, type: 3}
@@ -4159,14 +4279,16 @@ MonoBehaviour:
   joystick: {fileID: 1366843196}
   speed: 7.8
   trackDistance: 3
+  enemyTrackDistance: 3
   isSelected: 0
   spriteRenderer: {fileID: 0}
-  isMoving: 0
   health: 100
   attack: 10
   magic: 2
   resist: 8
   sp: 3
+  isMoving: 0
+  target: {fileID: 0}
   healthCircle: {fileID: 42101882}
   enemiesInRange: []
 --- !u!50 &1650880989
@@ -4226,13 +4348,49 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 2, y: 3.8}
   m_Direction: 0
+--- !u!58 &1650880991
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650880984}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 4
 --- !u!1 &1683343244
 GameObject:
   m_ObjectHideFlags: 0

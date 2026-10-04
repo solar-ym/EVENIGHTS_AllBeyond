@@ -69,12 +69,21 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Character")
+        if (collision.gameObject.tag == "Character" && !collision.isTrigger)
         {
             state = ENEMY_STATE.attacking;
             target = collision.gameObject.GetComponent<Character>();
+            collision.gameObject.GetComponent<Character>().StartCombat();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Character" && !collision.isTrigger)
+        {
+            collision.gameObject.GetComponent<Character>().EndCombat();
         }
     }
 

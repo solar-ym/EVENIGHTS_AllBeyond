@@ -59,8 +59,16 @@ public class Player : MonoBehaviour
         activeCharIndex = index;
         for (int i = 0; i < characters.Count; i++)
         {
-            if (i == index) characters[i].isSelected = true;
-            else characters[i].isSelected = false;
+            if (i == index)
+            {
+                characters[i].isSelected = true;
+                characters[i].spriteRenderer.sortingLayerName = "Active Player";
+            }
+            else
+            {
+                characters[i].isSelected = false;
+                characters[i].spriteRenderer.sortingLayerName = "Player";
+            }
         }
     }
 

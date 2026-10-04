@@ -1750,6 +1750,7 @@ MonoBehaviour:
   speed: 10
   trackDistance: 7
   isSelected: 0
+  spriteRenderer: {fileID: 0}
   isMoving: 0
   health: 100
   attack: 8
@@ -1757,6 +1758,7 @@ MonoBehaviour:
   resist: 6
   sp: 3
   healthCircle: {fileID: 1865638977}
+  enemiesInRange: []
 --- !u!50 &716157706
 Rigidbody2D:
   serializedVersion: 5
@@ -1954,6 +1956,7 @@ MonoBehaviour:
   speed: 6
   trackDistance: 2.8
   isSelected: 1
+  spriteRenderer: {fileID: 0}
   isMoving: 0
   health: 100
   attack: 4
@@ -1961,6 +1964,7 @@ MonoBehaviour:
   resist: 6
   sp: 3
   healthCircle: {fileID: 662582201}
+  enemiesInRange: []
 --- !u!50 &754209467
 Rigidbody2D:
   serializedVersion: 5
@@ -2678,6 +2682,7 @@ GameObject:
   - component: {fileID: 1172546966}
   - component: {fileID: 1172546967}
   - component: {fileID: 1172546968}
+  - component: {fileID: 1172546969}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2745,12 +2750,12 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1839018889
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.8018868, g: 0.20803669, b: 0.20803669, a: 1}
+  m_Sprite: {fileID: -430530761823899572, guid: 5f9a3cb337d6ce34bb9d629389834f36, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2846,6 +2851,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &1172546969
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172546963}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 245a89b5792871a43889b022630da742, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1189878595
 GameObject:
   m_ObjectHideFlags: 0
@@ -4133,6 +4160,7 @@ MonoBehaviour:
   speed: 7.8
   trackDistance: 3
   isSelected: 0
+  spriteRenderer: {fileID: 0}
   isMoving: 0
   health: 100
   attack: 10
@@ -4140,6 +4168,7 @@ MonoBehaviour:
   resist: 8
   sp: 3
   healthCircle: {fileID: 42101882}
+  enemiesInRange: []
 --- !u!50 &1650880989
 Rigidbody2D:
   serializedVersion: 5

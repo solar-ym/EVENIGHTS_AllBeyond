@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     ENEMY_STATE state = ENEMY_STATE.idle;
     private Character target;
 
+    private Animator animator;
     private SpriteRenderer spriteRenderer;
     private bool isMoving = false;
     private bool returningToSpawn = false;
@@ -47,10 +48,13 @@ public class Enemy : MonoBehaviour
         currentHP = health;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        animator.SetBool("isMoving", isMoving);
+
         if (!WithinSpawnRange() || returningToSpawn)
         {
             state = ENEMY_STATE.idle;
@@ -89,10 +93,6 @@ public class Enemy : MonoBehaviour
             transform.position += newDir * speed * Time.deltaTime;
             isMoving = true;
         }
-        else
-        {
-            isMoving = false;
-        }
     }
     protected virtual void ReturnToSpawn()
     {
@@ -123,7 +123,17 @@ public class Enemy : MonoBehaviour
     }
 
     // COMBAT -----------------------------------------------------------------------
-    protected virtual void UseNormalAttack() { }
+    protected virtual void UseNormalAttack() {
+        ResetAllTriggers();
+        animator.SetTrigger("Normal");
+    }
     protected virtual void UseEve() { }
     protected virtual void UseSkill() { }
+
+    // ANIMATIONS/VISUALS
+
+    protected virtual void ResetAllTriggers()
+    {
+        animator.ResetTrigger("Normal");
+    }
 }

@@ -13,7 +13,7 @@ public class Character : MonoBehaviour
     public bool isSelected = false;
 
     // Visuals
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     private Animator animator;
 
     // Movement

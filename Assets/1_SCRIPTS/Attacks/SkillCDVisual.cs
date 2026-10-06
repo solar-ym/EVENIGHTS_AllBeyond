@@ -17,7 +17,7 @@ public class SkillCDVisual : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            fill.fillAmount -= (1 / (float)3) * Time.deltaTime;
+            fill.fillAmount -= (1 / cooldown) * Time.deltaTime;
             if (timer > cooldown)
             {
                 fill.fillAmount = 0.0f;

@@ -2,12 +2,17 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Image xpBarFill;
     [SerializeField] private TextMeshProUGUI xpText;
+
+    [Header("Config")]
+    [SerializeField] private float maxCharDistance = 20.0f;
+    [SerializeField] private bool keyboard = true;
 
     private List<Character> characters = new List<Character>();
     private int activeCharIndex = 0;
@@ -28,11 +33,35 @@ public class Player : MonoBehaviour
     {
         xpBarFill.fillAmount = experiencePts / (float)nextExpCap;
 
+
+        if (!inCombat) return;
+        
+        int enemyCount = 0;
+
         foreach (Character character in characters)
         {
-            if (Vector3.Distance(characters[activeCharIndex].transform.position, character.transform.position) >= 10.0f)
+            if (character.enemiesInRange.Count == 0)
+            {
+                enemyCount++;
+                if (enemyCount >= 2)
+                {
+                    inCombat = false; 
+                    break;
+                }
+            }
+
+            if (Vector3.Distance(characters[activeCharIndex].transform.position, character.transform.position) >= maxCharDistance)
             {
                 inCombat = false; break;
+            } 
+        }
+
+        if (keyboard)
+        {
+            if (Keyboard.current.wKey.wasPressedThisFrame)
+            {
+                characters[activeCharIndex].FindEnemyTarget();
+                characters[activeCharIndex].UseNormalAttack();
             }
         }
     }

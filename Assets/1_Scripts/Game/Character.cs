@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Character : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] FixedJoystick joystick;
+    [SerializeField] protected FixedJoystick joystick;
     [SerializeField] private float speed = 2.5f;
     [SerializeField] private float trackDistance = 1.5f;
     [SerializeField] private float enemyTrackDistance = 1.5f;
@@ -31,8 +31,10 @@ public class Character : MonoBehaviour
     // Movement
     [Header("View Only")]
     public bool isMoving = false;
+    public bool movementLock = false;
     protected Player activePlayer;
     public GameObject target;
+    private float lockTime = 0.0f;
 
     [Header("Visual Refs")]
     [SerializeField] private Image healthCircle; 
@@ -48,6 +50,16 @@ public class Character : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (movementLock) {
+            lockTime += Time.deltaTime;
+            if (lockTime > 1.0f)
+            {
+                movementLock = false;
+                lockTime = 0.0f;
+            }
+            return;
+        } 
+
         if (!isSelected)
         {
             if (!activePlayer.inCombat)
@@ -91,11 +103,15 @@ public class Character : MonoBehaviour
 
         if (distanceToTarget >= dist)
         {
-            if (activePlayer.inCombat && distanceToTarget < enemyTrackDistance - 1.5f) newDir *= -1;
-
             transform.position += newDir * speed * Time.deltaTime;
             isMoving = true;
-        } 
+        }
+        else if (activePlayer.inCombat && distanceToTarget < enemyTrackDistance - 1.5f)
+        {
+            newDir *= -1;
+            transform.position += newDir * speed * Time.deltaTime;
+            isMoving = true;
+        }
         else if (!joystick.isDragging && !activePlayer.inCombat)
         {
             isMoving = false;
@@ -117,14 +133,17 @@ public class Character : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!enemiesInRange.Contains(collision) && collision.gameObject.tag == "Enemy")
+        if (!enemiesInRange.Contains(collision) && collision.gameObject.tag == "Enemy" && !collision.isTrigger)
         {
-            enemiesInRange.Add(collision);
+            if (collision.gameObject.GetComponent<Enemy>().state != Enemy.ENEMY_STATE.dead) enemiesInRange.Add(collision);
         }
     }
 
-    protected virtual void FindEnemyTarget() { }
-    public virtual void UseNormalAttack() { }
+    public virtual void FindEnemyTarget() { }
+    public virtual void UseNormalAttack() {
+        FindEnemyTarget();
+        movementLock = true;
+    }
     public virtual void UseEve() { }
     public virtual void UseSkill() { }
 

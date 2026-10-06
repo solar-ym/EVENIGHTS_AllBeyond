@@ -3,11 +3,20 @@ guid: 273cf140f3a604d46a09522c35e00a6a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1907545128529060660
-    second: Untitled148_20260123212400_0
+      213: -8023483086925776844
+    second: Meda Shai Attacks_0
   - first:
-      213: 3480657291031191359
-    second: Untitled148_20260123212400_1
+      213: 4683639612608413602
+    second: Meda Shai Attacks_1
+  - first:
+      213: -3865406925575417487
+    second: Meda Shai Attacks_2
+  - first:
+      213: 664360711576059548
+    second: Meda Shai Attacks_3
+  - first:
+      213: 8885963787732830434
+    second: Meda Shai Attacks_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,6 +122,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,67 +151,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled148_20260123212400_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 489
-        width: 1080
-        height: 940
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 43360031036f87a10800000000000000
-      internalID: 1907545128529060660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled148_20260123212400_1
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 76
-        width: 126
-        height: 364
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f3f99c86d57cd4030800000000000000
-      internalID: 3480657291031191359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Meda Shai Attacks_0
       rect:
         serializedVersion: 2
-        x: 325
-        y: 175
-        width: 71
-        height: 143
+        x: 0
+        y: 523
+        width: 1080
+        height: 1159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cc6e23a5d08bd0b4fb14e1a1790443bb
-      internalID: 699114029
+      spriteID: 4383f6684acd6a090800000000000000
+      internalID: -8023483086925776844
       vertices: []
       indices: 
       edges: []
@@ -198,20 +176,20 @@ TextureImporter:
       name: Meda Shai Attacks_1
       rect:
         serializedVersion: 2
-        x: 552
-        y: 128
-        width: 71
-        height: 299
+        x: 136
+        y: 75
+        width: 126
+        height: 365
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c55b7e9233bd1194b845c9f16937fe42
-      internalID: -2111563602
+      spriteID: 2aff875a961aff040800000000000000
+      internalID: 4683639612608413602
       vertices: []
       indices: 
       edges: []
@@ -220,20 +198,64 @@ TextureImporter:
       name: Meda Shai Attacks_2
       rect:
         serializedVersion: 2
-        x: 687
-        y: 158
-        width: 37
-        height: 194
+        x: 306
+        y: 237
+        width: 153
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 35ebfb797f645f2479d075de5486acc8
-      internalID: 1125591854
+      spriteID: 1711eb881e05b5ac0800000000000000
+      internalID: -3865406925575417487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meda Shai Attacks_3
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 127
+        width: 69
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e77381c88483900800000000000000
+      internalID: 664360711576059548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meda Shai Attacks_4
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 254
+        width: 197
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8ccce2cf8415b70800000000000000
+      internalID: 8885963787732830434
       vertices: []
       indices: 
       edges: []
@@ -242,7 +264,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 89672de59106a38478423cfc7910f03b
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -252,11 +274,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Meda Shai Attacks_0: 699114029
-      Meda Shai Attacks_1: -2111563602
-      Meda Shai Attacks_2: 1125591854
-      Untitled148_20260123212400_0: 1907545128529060660
-      Untitled148_20260123212400_1: 3480657291031191359
+      Meda Shai Attacks_0: -8023483086925776844
+      Meda Shai Attacks_1: 4683639612608413602
+      Meda Shai Attacks_2: -3865406925575417487
+      Meda Shai Attacks_3: 664360711576059548
+      Meda Shai Attacks_4: 8885963787732830434
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

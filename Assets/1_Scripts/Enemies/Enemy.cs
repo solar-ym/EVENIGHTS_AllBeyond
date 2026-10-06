@@ -1,12 +1,24 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using static Character;
 
 public class Enemy : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] GameObject spawnPoint;
+    [SerializeField] public GameObject spawnPoint;
+    [SerializeField] Image healthBarFill;
     [SerializeField] float maxFollowDistance = 10.0f;
     [SerializeField] float trackDistance = 3.0f;
+    [SerializeField] bool despawnAfterDeath = false;
+    [SerializeField] float deathDespawn = 10.0f;
+
+    [Header("Attacks")]
+    [SerializeField] AttackSpawner normalAttack;
+
+    [Header("Attack Cooldowns")]
+    [SerializeField] private float normalCD = 0.5f;
 
     [Header("Stat Ranges")]
     [SerializeField] int minHP = 10;
@@ -24,7 +36,7 @@ public class Enemy : MonoBehaviour
     private int resist = 0;
     private float speed = 0;
 
-    ENEMY_STATE state = ENEMY_STATE.idle;
+    public ENEMY_STATE state = ENEMY_STATE.idle;
     private Character target;
 
     private Animator animator;
@@ -32,10 +44,18 @@ public class Enemy : MonoBehaviour
     private bool isMoving = false;
     private bool returningToSpawn = false;
 
+    // Internal CD
+    private float internalNormalCD = 0.0f;
+    private float internalSkillCD = 0.0f;
+    private float internalEveCD = 0.0f;
+
+    private float time = 0.0f;
+
     public enum ENEMY_STATE
     {
         idle,
-        attacking
+        attacking,
+        dead
     }
 
     void Start()
@@ -53,6 +73,15 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (state == ENEMY_STATE.dead) {
+            if (despawnAfterDeath)
+            {
+                time += Time.deltaTime;
+                if (time >= deathDespawn) Destroy(this.gameObject);
+            }
+            return;
+        };
+
         animator.SetBool("isMoving", isMoving);
 
         if (!WithinSpawnRange() || returningToSpawn)
@@ -65,25 +94,26 @@ public class Enemy : MonoBehaviour
 
         else if (state == ENEMY_STATE.attacking && WithinSpawnRange())
         {
+            internalNormalCD += Time.deltaTime;
+
             TrackActiveTarget();
+            if (internalNormalCD >= normalCD)
+            {
+                UseNormalAttack();
+                internalNormalCD = 0.0f;
+            }
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (state == ENEMY_STATE.dead) return;
+
         if (collision.gameObject.tag == "Character" && !collision.isTrigger)
         {
             state = ENEMY_STATE.attacking;
             target = collision.gameObject.GetComponent<Character>();
             collision.gameObject.GetComponent<Character>().StartCombat();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Character" && !collision.isTrigger)
-        {
-            collision.gameObject.GetComponent<Character>().EndCombat();
         }
     }
 
@@ -133,11 +163,34 @@ public class Enemy : MonoBehaviour
 
     // COMBAT -----------------------------------------------------------------------
     protected virtual void UseNormalAttack() {
+        if (state != ENEMY_STATE.attacking || target == null) return;
+
         ResetAllTriggers();
         animator.SetTrigger("Normal");
+
+        Vector3 dir = Vector3.zero;
+        Vector3 trackPos = target.transform.position;
+
+        dir = trackPos - this.transform.position;
+        dir.Normalize();
+
+        normalAttack.SpawnAttack(dir);
     }
     protected virtual void UseEve() { }
     protected virtual void UseSkill() { }
+
+    protected virtual void Die()
+    {
+        spriteRenderer.color = Color.gray;
+        ResetAllTriggers();
+        isMoving = false;
+        target = null;
+
+        state = ENEMY_STATE.dead;
+        animator.SetTrigger("Die");
+
+        spriteRenderer.sortingLayerName = "Enemy Behind";
+    }
 
     // ANIMATIONS/VISUALS
 
@@ -145,4 +198,41 @@ public class Enemy : MonoBehaviour
     {
         animator.ResetTrigger("Normal");
     }
+
+    // STAT MANIP -------------------------------------------------------------------
+    public void AlterHP(int val)
+    {
+        currentHP += val;
+        currentHP = Mathf.Clamp(currentHP, 0, health);
+
+        if (currentHP <= 0) Die();
+
+        healthBarFill.fillAmount = currentHP / (float)health;
+    }
+
+    public void AlterStat(ENEMY_STATS stat, int val)
+    {
+        switch (stat)
+        {
+            case ENEMY_STATS.atk:
+                attack += val;
+                break;
+            case ENEMY_STATS.res:
+                resist += val;
+                break;
+            case ENEMY_STATS.maxHp:
+                health += val;
+                break;
+            default:
+                if (GameDebugger.debugMode) Debug.Log("Atler stat out of range.");
+                break;
+        }
+    }
+
+    public enum ENEMY_STATS
+    {
+        atk = 0,
+        res,
+        maxHp
+    };
 }

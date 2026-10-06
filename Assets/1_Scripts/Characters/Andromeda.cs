@@ -12,6 +12,9 @@ public class Andromeda : Character
     [SerializeField] protected float skillCD = 0.5f;
     [SerializeField] protected float eveCD = 0.5f;
 
+    [Header("Attacks")]
+    [SerializeField] AttackSpawner normalAttack;
+
     // Internal CD
     private float internalNormalCD = 0.0f;
     private float internalSkillCD = 0.0f;
@@ -21,10 +24,18 @@ public class Andromeda : Character
     {
         base.Update();
 
+        if (internalEveCD < 50f) internalNormalCD += Time.deltaTime;
 
+        if (!isSelected && activePlayer.inCombat)
+        {
+            if (internalNormalCD >= normalCD)
+            {
+                UseNormalAttack();
+            }
+        }
     }
 
-    protected override void FindEnemyTarget() 
+    public override void FindEnemyTarget() 
     {
         if (enemiesInRange.Count == 0) return;
 
@@ -49,7 +60,28 @@ public class Andromeda : Character
 
         if (activePlayer.inCombat) target = enemiesInRange[minIndex].gameObject;
     }
-    public override void UseNormalAttack() { }
+    public override void UseNormalAttack() {
+        if (internalNormalCD < normalCD) return;
+
+        base.UseNormalAttack();
+
+        Vector3 dir = Vector3.zero;
+        Vector3 trackPos;
+        if (target != null)
+        {
+            trackPos = target.transform.position;
+        } else
+        {
+            trackPos = this.transform.position + joystick.GetDirAsVec3() * -1.5f;
+        }
+
+        dir = trackPos - this.transform.position;
+        dir.Normalize();
+
+        normalAttack.SpawnAttack(dir);
+
+        internalNormalCD = 0.0f;
+    }
     public override void UseEve() { }
     public override void UseSkill() { }
 }

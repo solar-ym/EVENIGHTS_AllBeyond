@@ -3,8 +3,29 @@ guid: c580b9a00f5972d42ab07c6caad0f9a4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4317432830055966993
-    second: Untitled148_20260123211131_0
+      213: -6839618312741258130
+    second: Claure Attacks_0
+  - first:
+      213: -5368699748303537751
+    second: Claure Attacks_1
+  - first:
+      213: 4510148370485630966
+    second: Claure Attacks_2
+  - first:
+      213: 1239759216359081170
+    second: Claure Attacks_3
+  - first:
+      213: -3560128986429515235
+    second: Claure Attacks_4
+  - first:
+      213: -75086161592469465
+    second: Claure Attacks_5
+  - first:
+      213: 1406633556733501564
+    second: Claure Attacks_6
+  - first:
+      213: 9212407101067658217
+    second: Claure Attacks_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -110,6 +131,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +160,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled148_20260123211131_0
+      name: Claure Attacks_0
       rect:
         serializedVersion: 2
-        x: 211
-        y: 132
-        width: 52
-        height: 316
+        x: 296
+        y: 1323
+        width: 145
+        height: 255
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,30 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1196811c84a9aeb30800000000000000
-      internalID: 4317432830055966993
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Claure Attacks_0
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 650
-        height: 657
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5174552aad45c144c9bc9617858bbbac
-      internalID: -19248273
+      spriteID: e6cfcc5e16bc411a0800000000000000
+      internalID: -6839618312741258130
       vertices: []
       indices: 
       edges: []
@@ -173,42 +185,64 @@ TextureImporter:
       name: Claure Attacks_1
       rect:
         serializedVersion: 2
-        x: 309
-        y: 685
-        width: 650
-        height: 552
+        x: 279
+        y: 658
+        width: 229
+        height: 458
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3d7ebeeac690e5f479749ca71c1e9ff4
-      internalID: -797241303
+      spriteID: 9a973a4060c8e75b0800000000000000
+      internalID: -5368699748303537751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Claure Attacks_2
+      name: Claure Attacks_4
       rect:
         serializedVersion: 2
-        x: 406
-        y: 1274
-        width: 497
-        height: 471
+        x: 777
+        y: 82
+        width: 52
+        height: 314
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3dbdef0b29dd12f48b6beef2f0f0d2c6
-      internalID: 1420475658
+      spriteID: d1a1c499c81e79ec0800000000000000
+      internalID: -3560128986429515235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Claure Attacks_6
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 15
+        width: 468
+        height: 553
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c70ae3664cd558310800000000000000
+      internalID: 1406633556733501564
       vertices: []
       indices: 
       edges: []
@@ -217,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8c824d440fdb9ac4d960c99c3e397063
+    spriteID: 70a5340175e9dcb4dba9d76a4d06cd6d
     internalID: 0
     vertices: []
     indices: 
@@ -227,10 +261,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Claure Attacks_0: -19248273
-      Claure Attacks_1: -797241303
-      Claure Attacks_2: 1420475658
-      Untitled148_20260123211131_0: 4317432830055966993
+      Claure Attacks_0: -6839618312741258130
+      Claure Attacks_1: -5368699748303537751
+      Claure Attacks_2: 4510148370485630966
+      Claure Attacks_3: 1239759216359081170
+      Claure Attacks_4: -3560128986429515235
+      Claure Attacks_5: -75086161592469465
+      Claure Attacks_6: 1406633556733501564
+      Claure Attacks_7: 9212407101067658217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

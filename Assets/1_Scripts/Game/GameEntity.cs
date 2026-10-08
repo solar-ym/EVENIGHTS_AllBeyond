@@ -178,6 +178,22 @@ public class GameEntity : MonoBehaviour
         }
     }
 
+    public void FlatBuff(STATS stat, int mod)
+    {
+        switch (stat)
+        {
+            case STATS.atk:
+                atkMod += mod;
+                break;
+            case STATS.mag:
+                magMod += mod;
+                break;
+            case STATS.res:
+                resMod += mod;
+                break;
+        }
+    }
+
     public virtual void ModAtk(float percentage)
     {
         atkMod += Mathf.FloorToInt(attack * percentage);

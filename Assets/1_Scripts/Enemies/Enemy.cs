@@ -166,6 +166,7 @@ public class Enemy : GameEntity
         return (Vector3.Distance(this.transform.position, spawnPoint.transform.position) <= maxFollowDistance);
     }
 
+
     // COMBAT -----------------------------------------------------------------------
 
     protected virtual void UseNormalAttack() {

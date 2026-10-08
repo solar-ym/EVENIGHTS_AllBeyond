@@ -1,8 +1,11 @@
-using UnityEngine;
+using System;
 using System.Collections.Generic;
-using UnityEngine.UI;
+using System.Xml.Serialization;
 using TMPro;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using static GameEntity;
 
 public class Player : MonoBehaviour
 {
@@ -23,6 +26,7 @@ public class Player : MonoBehaviour
     private int experiencePts = 0;
     private int nextExpCap = 100;
 
+    private List<FLAT_BUFF> buffList = new List<FLAT_BUFF>();
 
     void Start()
     {
@@ -55,6 +59,8 @@ public class Player : MonoBehaviour
                 inCombat = false; break;
             } 
         }
+
+        PollBuffs();
 
         if (keyboard)
         {
@@ -120,5 +126,67 @@ public class Player : MonoBehaviour
     public bool GetActiveIsFlipped()
     {
         return characters[activeCharIndex].GetFlipped();
+    }
+
+    public void HealAllCharacters(int value)
+    {
+        foreach (Character c in characters)
+        {
+            c.AlterHP(value);
+        }
+    }
+
+    // BUFFS ----------------------------------------------------
+
+    private void PollBuffs()
+    {
+        for (int i = 0; i < buffList.Count; ++i)
+        {
+            FLAT_BUFF thisBuff = buffList[i];
+            thisBuff.life += Time.deltaTime;
+
+            if (!thisBuff.hasBeenTriggered)
+            {
+                foreach (Character character in characters)
+                {
+                    character.FlatBuff(thisBuff.stat, thisBuff.value);
+                }
+                thisBuff.hasBeenTriggered = true;
+            }
+
+            if (thisBuff.life >= thisBuff.lifeSpan)
+            {
+                foreach (Character character in characters)
+                {
+                    character.FlatBuff(thisBuff.stat, thisBuff.value * -1);
+                }
+            }
+
+            buffList[i] = thisBuff;
+        }
+
+        buffList.RemoveAll(buff => buff.life >= buff.lifeSpan);
+    }
+
+    public void BuffAllCharacters(GameEntity.STATS stat, int modifier, float lifespan)
+    {
+        buffList.Add( new FLAT_BUFF(stat, modifier, lifespan) );
+    }
+
+    public struct FLAT_BUFF
+    {
+        public FLAT_BUFF(GameEntity.STATS targetStat, int val, float lifespan)
+        {
+            stat = targetStat;
+            value = val;
+            lifeSpan = lifespan;
+            life = 0.0f;
+            hasBeenTriggered = false;
+        }
+        public GameEntity.STATS stat;
+        public int value;
+        public float life;
+        public float lifeSpan;
+        public bool hasBeenTriggered;
     }
 }

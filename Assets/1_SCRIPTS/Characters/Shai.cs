@@ -11,11 +11,6 @@ public class Shai : Character
     [SerializeField] protected float skillCD = 0.5f;
     [SerializeField] protected float eveCD = 0.5f;
 
-    // Internal CD
-    private float internalNormalCD = 0.0f;
-    private float internalSkillCD = 0.0f;
-    private float internalEveCD = 0.0f;
-
     [Header("Attacks")]
     [SerializeField] AttackSpawner normalAttack;
 

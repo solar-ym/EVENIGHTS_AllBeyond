@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3687181567486673872}
+  - component: {fileID: 4485469202150913001}
   m_Layer: 0
   m_Name: Meda Normal Attack
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   - {fileID: 8775433121651663294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4485469202150913001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427889909179746995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850b9d88535c17942b768c99333c14d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjUnloader
+  timeToLive: 30
 --- !u!1 &2708367694433207222
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,6 +94,7 @@ MonoBehaviour:
   attackToSpawn: {fileID: 7121526796216717264, guid: 7afa2ccf32d4c794dba5f6d14a2d20db, type: 3}
   projectileHolder: {fileID: 0}
   spawnDistance: 0
+  attackOriginator: {fileID: 0}
 --- !u!1001 &6215217267998026839
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,10 +14,6 @@ public class Claure : Character
     [Header("Attacks")]
     [SerializeField] AttackSpawner normalAttack;
 
-    // Internal CD
-    private float internalNormalCD = 0.0f;
-    private float internalSkillCD = 0.0f;
-    private float internalEveCD = 0.0f;
 
     protected override void Update()
     {

@@ -110,8 +110,8 @@ MonoBehaviour:
   targetEnemy: 1
   speed: 8
   ranged: 1
-  pierce: 1
-  knockbackMod: 0
+  pierce: 0
+  trackTarget: 1
   dmgType: 0
   hasAdditionalAttack: 0
   staticAttack: 0

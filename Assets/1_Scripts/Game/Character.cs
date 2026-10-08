@@ -38,7 +38,12 @@ public class Character : GameEntity
     private float lockTime = 0.0f;
 
     [Header("Visual Refs")]
-    [SerializeField] private Image healthCircle; 
+    [SerializeField] private Image healthCircle;
+
+    // Internal CD
+    protected float internalNormalCD = 0.0f;
+    protected float internalSkillCD = 0.0f;
+    protected float internalEveCD = 0.0f;
 
     void Start()
     {
@@ -58,6 +63,9 @@ public class Character : GameEntity
 
     protected virtual void Update()
     {
+        if (internalNormalCD < 50f) internalNormalCD += Time.deltaTime;
+        if (internalSkillCD < 50f) internalSkillCD += Time.deltaTime;
+
         if (movementLock) {
             lockTime += Time.deltaTime;
             if (lockTime > moveLockDuration)
@@ -196,5 +204,19 @@ public class Character : GameEntity
 
     public override void ClearSpdDebuff() {
         speed = movementSpeed;
+    }
+
+    // Getters
+    public float GetNormalCD()
+    {
+        return internalNormalCD;
+    }
+    public float GetSkillCD()
+    {
+        return internalSkillCD;
+    }
+    public float GetEveCD()
+    {
+        return internalEveCD;
     }
 }

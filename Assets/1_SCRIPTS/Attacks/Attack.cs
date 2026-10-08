@@ -9,6 +9,7 @@ public class Attack : MonoBehaviour
     [SerializeField] protected float speed = 0.5f;
     [SerializeField] protected bool ranged = true;
     [SerializeField] protected bool pierce = false;
+    [SerializeField] protected bool trackTarget = false;
     [SerializeField] protected DamageCalculator.DAMAGE_TYPE dmgType = DamageCalculator.DAMAGE_TYPE.normal;
 
     [Header("Additional Attack")]
@@ -72,14 +73,21 @@ public class Attack : MonoBehaviour
 
         if (collision.gameObject.tag == targetTag && !collision.isTrigger)
         {
+
             if (targetEnemy)
             {
                 Enemy target = collision.gameObject.GetComponent<Enemy>();
+                int dmgVal = CalculateDamage(thisAttacker, target);
                 target.AlterHP(CalculateDamage(thisAttacker, target));
 
                 if (dmgType == DamageCalculator.DAMAGE_TYPE.holy)
                 {
                     target.AddBuff(GameEntity.STATS.res, 0.2f, -1, 10.0f);
+                }
+
+                if (dmgType == DamageCalculator.DAMAGE_TYPE.cursed)
+                {
+                    thisAttacker.AlterHP(dmgVal / 2);
                 }
 
             }

@@ -15,16 +15,9 @@ public class Andromeda : Character
     [Header("Attacks")]
     [SerializeField] AttackSpawner normalAttack;
 
-    // Internal CD
-    private float internalNormalCD = 0.0f;
-    private float internalSkillCD = 0.0f;
-    private float internalEveCD = 0.0f;
-
     protected override void Update()
     {
         base.Update();
-
-        if (internalNormalCD < 50f) internalNormalCD += Time.deltaTime;
 
         if (!isSelected && activePlayer.inCombat)
         {
@@ -80,8 +73,22 @@ public class Andromeda : Character
 
         normalAttack.SpawnAttack(dir);
 
+        int otherHealVal = Mathf.FloorToInt(0.5f * attack);
+        activePlayer.HealAllCharacters(otherHealVal);
+
         internalNormalCD = 0.0f;
     }
     public override void UseEve() { }
-    public override void UseSkill() { }
+    public override void UseSkill() 
+    {
+        if (internalSkillCD < skillCD) return;
+
+        int healValue = Mathf.CeilToInt(magic * (1.3f));
+        activePlayer.HealAllCharacters(healValue);
+
+        int resBuffVal = Mathf.FloorToInt(magic * (1.3f));
+        activePlayer.BuffAllCharacters(GameEntity.STATS.res, resBuffVal, 10.0f);
+
+        internalSkillCD = 0.0f;
+    }
 }

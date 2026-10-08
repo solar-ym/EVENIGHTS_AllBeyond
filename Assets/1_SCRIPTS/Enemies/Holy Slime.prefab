@@ -301,7 +301,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   healthBarFill: {fileID: 8887155601719319112}
   maxFollowDistance: 10
-  trackDistance: 3
+  trackDistance: 6
   despawnAfterDeath: 1
   deathDespawn: 10
   normalAttack: {fileID: 8860782369213359747}

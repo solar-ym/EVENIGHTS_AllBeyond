@@ -1,3 +1,6 @@
+using System.Collections;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -29,12 +32,6 @@ public class Enemy : GameEntity
     [SerializeField] int maxRes = 10;
     [SerializeField] float minSpd = 2;
     [SerializeField] float maxSpd = 5;
-
-    private int currentHP = 0;
-    private int health = 0;
-    private int attack = 0;
-    private int resist = 0;
-    private float speed = 0;
 
     public ENEMY_STATE state = ENEMY_STATE.idle;
     private Character target;
@@ -127,8 +124,16 @@ public class Enemy : GameEntity
 
         spriteRenderer.flipX = newDir.x > 0 ? true : false;
 
-        if (Vector2.Distance(trackPos, this.transform.position) >= trackDistance)
+        float distanceToTarget = Vector2.Distance(trackPos, this.transform.position);
+
+        if (distanceToTarget >= trackDistance)
         {
+            transform.position += newDir * speed * Time.deltaTime;
+            isMoving = true;
+        }
+        else if (distanceToTarget < trackDistance - 1.5f)
+        {
+            newDir *= -1;
             transform.position += newDir * speed * Time.deltaTime;
             isMoving = true;
         }
@@ -162,6 +167,7 @@ public class Enemy : GameEntity
     }
 
     // COMBAT -----------------------------------------------------------------------
+
     protected virtual void UseNormalAttack() {
         if (state != ENEMY_STATE.attacking || target == null) return;
 
@@ -190,6 +196,8 @@ public class Enemy : GameEntity
         animator.SetTrigger("Die");
 
         spriteRenderer.sortingLayerName = "Enemy Behind";
+
+        EventList.TriggerEvent("AddExp");
     }
 
     // ANIMATIONS/VISUALS
@@ -205,5 +213,6 @@ public class Enemy : GameEntity
         base.AlterHP(val);
 
         healthBarFill.fillAmount = currentHP / (float)health;
+        if (currentHP <= 0) Die();
     }
 }

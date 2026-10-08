@@ -105,11 +105,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0aded062312f140ab5a7522caad37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Attack
+  thisAttacker: {fileID: 0}
   lifespan: 0.7
   targetEnemy: 1
   speed: 0
   ranged: 0
   pierce: 1
+  knockbackMod: 2
+  dmgType: 0
+  hasAdditionalAttack: 0
+  staticAttack: 1
+  nextAttackSpawner: {fileID: 0}
+  nextAttackDirection: {x: 0, y: 0, z: 0}
 --- !u!70 &5697371426205369671
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

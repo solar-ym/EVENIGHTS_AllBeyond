@@ -33,11 +33,11 @@ public class Player : MonoBehaviour
     {
         xpBarFill.fillAmount = experiencePts / (float)nextExpCap;
 
-
         if (!inCombat) return;
         
         int enemyCount = 0;
 
+        // Detect combat
         foreach (Character character in characters)
         {
             if (character.enemiesInRange.Count == 0)
@@ -99,12 +99,10 @@ public class Player : MonoBehaviour
             if (i == index)
             {
                 characters[i].isSelected = true;
-                characters[i].spriteRenderer.sortingLayerName = "Active Player";
             }
             else
             {
                 characters[i].isSelected = false;
-                characters[i].spriteRenderer.sortingLayerName = "Player";
             }
         }
     }

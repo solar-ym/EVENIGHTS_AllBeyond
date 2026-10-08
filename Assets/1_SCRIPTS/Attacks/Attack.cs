@@ -3,6 +3,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     [Header("Details")]
+    [HideInInspector] public GameEntity thisAttacker;
     [SerializeField] protected float lifespan = 1.0f;
     [SerializeField] protected bool targetEnemy = true;
     [SerializeField] protected float speed = 0.5f;
@@ -13,7 +14,7 @@ public class Attack : MonoBehaviour
     [Header("Additional Attack")]
     [SerializeField] public bool hasAdditionalAttack = false;
     [SerializeField] public bool staticAttack = true;
-    [SerializeField] private AttackSpawner nextAttackSpawner;
+    [SerializeField] public AttackSpawner nextAttackSpawner;
     [SerializeField] public Vector3 nextAttackDirection;
 
     private bool isMoving = false;
@@ -74,12 +75,18 @@ public class Attack : MonoBehaviour
             if (targetEnemy)
             {
                 Enemy target = collision.gameObject.GetComponent<Enemy>();
-                target.AlterHP(CalculateDamage());
+                target.AlterHP(CalculateDamage(thisAttacker, target));
+
+                if (dmgType == DamageCalculator.DAMAGE_TYPE.holy)
+                {
+                    target.AddBuff(GameEntity.STATS.res, 0.2f, -1, 10.0f);
+                }
+
             }
             else
             {
                 Character target = collision.gameObject.GetComponent<Character>();
-                target.AlterHP(CalculateDamage());
+                target.AlterHP(CalculateDamage(thisAttacker, target));
             }
 
             if (hasAdditionalAttack)
@@ -94,8 +101,8 @@ public class Attack : MonoBehaviour
         }
     }
 
-    protected virtual int CalculateDamage()
+    protected virtual int CalculateDamage(GameEntity attacker, GameEntity target)
     {
-        return -10;
+        return DamageCalculator.CalculateDamage(attacker, target, dmgType);
     }
 }

@@ -287,6 +287,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012220a731b163e448ea9f330cfdac05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  health: 100
+  attack: 5
+  magic: 5
+  resist: 5
+  speed: 5
+  atkMod: 0
+  magMod: 0
+  resMod: 0
+  poisoned: 0
+  resDebuffed: 0
+  spdDebuffed: 0
   spawnPoint: {fileID: 0}
   healthBarFill: {fileID: 8887155601719319112}
   maxFollowDistance: 10
@@ -354,7 +365,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 1
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -548,3 +559,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
   attackToSpawn: {fileID: 427889909179746995, guid: 5e9497dd483250d4e917231f8f65be63, type: 3}
   projectileHolder: {fileID: 0}
+  spawnDistance: 1.5
+  attackOriginator: {fileID: 7737161593782262155}

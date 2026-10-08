@@ -24,7 +24,7 @@ public class Andromeda : Character
     {
         base.Update();
 
-        if (internalEveCD < 50f) internalNormalCD += Time.deltaTime;
+        if (internalNormalCD < 50f) internalNormalCD += Time.deltaTime;
 
         if (!isSelected && activePlayer.inCombat)
         {

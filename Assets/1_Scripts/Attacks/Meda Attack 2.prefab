@@ -105,11 +105,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0aded062312f140ab5a7522caad37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Attack
+  thisAttacker: {fileID: 0}
   lifespan: 0.5
   targetEnemy: 1
   speed: 0
   ranged: 0
   pierce: 1
+  dmgType: 1
   hasAdditionalAttack: 0
   staticAttack: 1
   nextAttackSpawner: {fileID: 0}

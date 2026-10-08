@@ -12,6 +12,7 @@ public class Character : GameEntity
     [SerializeField] private float trackDistance = 1.5f;
     [SerializeField] private float enemyTrackDistance = 1.5f;
     [SerializeField] private float distanceBuffer = 1.5f;
+    [SerializeField] private float moveLockDuration = 1.0f;
 
     [Header("Selection")]
     public bool isSelected = false;
@@ -59,7 +60,7 @@ public class Character : GameEntity
     {
         if (movementLock) {
             lockTime += Time.deltaTime;
-            if (lockTime > 1.0f)
+            if (lockTime > moveLockDuration)
             {
                 movementLock = false;
                 lockTime = 0.0f;
@@ -116,7 +117,7 @@ public class Character : GameEntity
             isMoving = true;
         }
         else if (activePlayer.inCombat && distanceToTarget < enemyTrackDistance - distanceBuffer ||
-            !activePlayer.inCombat && distanceToTarget < trackDistance - distanceBuffer)
+            !activePlayer.inCombat && distanceToTarget < trackDistance/2 - distanceBuffer)
         {
             newDir *= -1;
             transform.position += newDir * speed * Time.deltaTime;

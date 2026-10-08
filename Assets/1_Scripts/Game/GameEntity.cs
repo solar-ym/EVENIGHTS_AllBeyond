@@ -1,20 +1,21 @@
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GameEntity : MonoBehaviour
 {
     [Header("Stats | View Only")]
-    [SerializeField] protected int health = 100;
-    [SerializeField] protected int attack = 5;
-    [SerializeField] protected int magic = 5;
-    [SerializeField] protected int resist = 5;
+    [SerializeField] public int health = 100;
+    [SerializeField] public int attack = 5;
+    [SerializeField] public int magic = 5;
+    [SerializeField] public int resist = 5;
     [SerializeField] protected float speed = 5;
     protected int currentHP = 100;
 
     // Stat Modifiers
-    [HideInInspector] public int atkMod = 0;
-    [HideInInspector] public int magMod = 0;
-    [HideInInspector] public int resMod = 0;
+    public int atkMod = 0;
+    public int magMod = 0;
+    public int resMod = 0;
+    private List<BUFF> buffs = new List<BUFF>();
 
     // Debuffs
     [HideInInspector] public bool poisoned = false;
@@ -23,12 +24,10 @@ public class GameEntity : MonoBehaviour
 
         // Timers
         private float poisonTimer = 0.0f;
-        private float resDebuffTimer = 0.0f;
         private float spdDebufftimer = 0.0f;
         private float internalTime = 0.0f;
 
         private float maxPoisonDuration = 5.0f;
-        private float maxResDebuffDuration = 10.0f;
         private float maxSpdDebuffDuration = 5.0f;
 
         // Stacks + Other Mods
@@ -54,17 +53,6 @@ public class GameEntity : MonoBehaviour
             }
         }
 
-        if (resDebuffed)
-        {
-            resDebuffTimer += Time.deltaTime;
-            if (resDebuffTimer >= maxResDebuffDuration)
-            {
-                ClearResDebuff();
-                resDebuffed = false;
-                resDebuffTimer = 0.0f;
-            }
-        }
-
         if (spdDebuffed)
         {
             spdDebufftimer += Time.deltaTime;
@@ -74,6 +62,22 @@ public class GameEntity : MonoBehaviour
                 spdDebufftimer = 0.0f;
             }
         }
+
+        for (int i = 0; i < buffs.Count; ++i)
+        {
+            BUFF thisBuff = buffs[i];
+            thisBuff.life += Time.deltaTime;
+           
+            if (!thisBuff.hasActivated)
+            {
+                TriggerBuff(thisBuff);
+                thisBuff.hasActivated = true;
+            }
+
+            buffs[i] = thisBuff;
+        }
+
+        buffs.RemoveAll(buff => buff.life >= buff.lifeSpan);
 
         if (internalTime >= 1) internalTime = 0;
     }
@@ -106,30 +110,13 @@ public class GameEntity : MonoBehaviour
         }
     }
 
-    public enum STATS
-    {
-        atk = 0,
-        mag,
-        res,
-        maxHp
-    };
-
-    // Debuffs
+    // Debuffs -------------------------------------------------------
     public virtual void Poison(float newMod)
     {
         if (newMod > poisonModifier) poisonModifier = newMod;
         poisoned = true;
 
         poisonTimer = 0.0f;
-    }
-
-    public virtual void DebuffRes(float percentage)
-    {
-        if (resDebuffed) ClearResDebuff();
-        
-        ModRes(percentage * -1);
-        resDebuffed = true;
-        resDebuffTimer = 0.0f;
     }
 
     public virtual void DebuffSpd()
@@ -144,7 +131,6 @@ public class GameEntity : MonoBehaviour
         spdDebufftimer = 0.0f;
     }
 
-    public virtual void ClearResDebuff() { }
     public virtual void ClearSpdDebuff() {
         spdDebuffStacks = Mathf.Clamp(spdDebuffStacks - 1, 0, 3);
 
@@ -165,6 +151,33 @@ public class GameEntity : MonoBehaviour
 
     // Stat Mod Manip -------------------------------------------------------
 
+    public void AddBuff(STATS affectedStat, float modifier, int buffOrDebuff, float lifespan)
+    {
+        BUFF modToAdd = new BUFF(
+                affectedStat,
+                modifier * buffOrDebuff,
+                lifespan
+            );
+
+        buffs.Add( modToAdd );
+    }
+
+    private void TriggerBuff(BUFF buff)
+    {
+        switch (buff.affectedStat)
+        {
+            case STATS.atk:
+                ModAtk(buff.modifier);
+                break;
+            case STATS.mag:
+                ModMag(buff.modifier);
+                break;
+            case STATS.res:
+                ModRes(buff.modifier);
+                break;
+        }
+    }
+
     public virtual void ModAtk(float percentage)
     {
         atkMod += Mathf.FloorToInt(attack * percentage);
@@ -179,4 +192,37 @@ public class GameEntity : MonoBehaviour
     {
         resMod += Mathf.FloorToInt(resist * percentage);
     }
+
+    public void CleanseMods()
+    {
+        atkMod = 0;
+        magMod = 0;
+        resMod = 0;
+    }
+
+    // Enums/Structs -----------------------------------------------------------
+    public enum STATS
+    {
+        atk = 0,
+        mag,
+        res,
+        maxHp
+    };
+
+    public struct BUFF
+    {
+        public BUFF(STATS stat, float mod, float span)
+        {
+            affectedStat = stat;
+            modifier = mod;
+            lifeSpan = span;
+            life = 0.0f;
+            hasActivated = false;
+        }
+        public STATS affectedStat;
+        public float modifier;
+        public float lifeSpan;
+        public float life;
+        public bool hasActivated;
+    };
 }

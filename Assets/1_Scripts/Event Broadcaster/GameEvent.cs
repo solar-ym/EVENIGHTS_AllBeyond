@@ -8,7 +8,8 @@ public class GameEvent : ScriptableObject
 
     private void OnEnable()
     {
-        EventList.allGameEvents.Add(this.name, this);
+        if (!EventList.allGameEvents.ContainsKey(this.name))
+            EventList.allGameEvents.Add(this.name, this);
     }
 
     public void TriggerEvent()

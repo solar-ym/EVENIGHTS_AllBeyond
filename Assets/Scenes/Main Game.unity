@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 136947702}
   - component: {fileID: 136947703}
   - component: {fileID: 136947704}
+  - component: {fileID: 136947705}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -494,6 +495,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &136947705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136947701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22aa4b23ae7c68439fb078dbcb7a8e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventListener
+  gameEvent: {fileID: 11400000, guid: b3b4a2ac390cf4644a09974e51108f45, type: 2}
+  funcToCall:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 136947703}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: GainXP
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &138390393
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +570,7 @@ MonoBehaviour:
   attackToSpawn: {fileID: 427889909179746995, guid: 658a975506d21a340ad4561663a84032, type: 3}
   projectileHolder: {fileID: 227716788}
   spawnDistance: 1.5
+  attackOriginator: {fileID: 754209470}
 --- !u!1001 &186314171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1302,7 +1332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &487465311
 Transform:
   m_ObjectHideFlags: 0
@@ -1935,9 +1965,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
-  m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_Mass: 2
+  m_LinearDamping: 1
+  m_AngularDamping: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1984,7 +2014,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.05189997, y: -0.077849865}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.235802, y: 3.2643003}
   m_Direction: 0
 --- !u!58 &716157708
@@ -2035,17 +2065,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0d77f6a84d02741a58763df6f4230a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shai
-  joystick: {fileID: 1366843196}
-  speed: 10
-  trackDistance: 7
-  enemyTrackDistance: 9
-  distanceBuffer: 1.5
-  isSelected: 0
-  spriteRenderer: {fileID: 716157704}
   health: 100
   attack: 8
   magic: 6
   resist: 6
+  speed: 10
+  atkMod: 0
+  magMod: 0
+  resMod: 0
+  poisoned: 0
+  resDebuffed: 0
+  spdDebuffed: 0
+  joystick: {fileID: 1366843196}
+  movementSpeed: 10
+  trackDistance: 7
+  enemyTrackDistance: 9
+  distanceBuffer: 1.5
+  moveLockDuration: 1
+  isSelected: 0
+  spriteRenderer: {fileID: 716157704}
+  startingHealth: 100
+  startingAttack: 8
+  startingMagic: 6
+  startingResist: 6
   sp: 3
   isMoving: 0
   movementLock: 0
@@ -2053,7 +2095,7 @@ MonoBehaviour:
   healthCircle: {fileID: 1865638977}
   enemiesInRange: []
   circleCollider: {fileID: 716157708}
-  normalCD: 2
+  normalCD: 1.5
   skillCD: 7
   eveCD: 10
   normalAttack: {fileID: 1070193311}
@@ -2140,8 +2182,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1153193755
-  m_SortingLayer: 3
+  m_SortingLayerID: -748626557
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2146325261911611826, guid: 3035d9b719410f74680828b320e42b4b, type: 3}
@@ -2188,9 +2230,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
-  m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_Mass: 2
+  m_LinearDamping: 1
+  m_AngularDamping: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2237,7 +2279,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.010399163, y: -0.051995873}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.4169196, y: 3.2480233}
   m_Direction: 0
 --- !u!58 &754209469
@@ -2288,17 +2330,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ccfcafb8eb71941b4299a4578434de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Andromeda
-  joystick: {fileID: 1366843196}
-  speed: 4
-  trackDistance: 3
-  enemyTrackDistance: 11
-  distanceBuffer: 1.5
-  isSelected: 1
-  spriteRenderer: {fileID: 0}
   health: 100
   attack: 4
   magic: 10
   resist: 6
+  speed: 4
+  atkMod: 0
+  magMod: 0
+  resMod: 0
+  poisoned: 0
+  resDebuffed: 0
+  spdDebuffed: 0
+  joystick: {fileID: 1366843196}
+  movementSpeed: 4
+  trackDistance: 3
+  enemyTrackDistance: 11
+  distanceBuffer: 1.5
+  moveLockDuration: 1
+  isSelected: 1
+  spriteRenderer: {fileID: 0}
+  startingHealth: 100
+  startingAttack: 4
+  startingMagic: 10
+  startingResist: 6
   sp: 3
   isMoving: 0
   movementLock: 0
@@ -2452,6 +2506,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785150049}
   m_CullTransparentMesh: 1
+--- !u!1 &853245824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 853245825}
+  m_Layer: 0
+  m_Name: spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &853245825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853245824}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 946230110}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &946230109
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,7 +2566,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1357730297}
   - {fileID: 487465311}
+  - {fileID: 853245825}
   m_Father: {fileID: 1189878596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1030209379
@@ -2668,6 +2755,7 @@ MonoBehaviour:
   attackToSpawn: {fileID: 427889909179746995, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
   projectileHolder: {fileID: 227716788}
   spawnDistance: 1.5
+  attackOriginator: {fileID: 716157709}
 --- !u!1 &1076212810
 GameObject:
   m_ObjectHideFlags: 0
@@ -3870,6 +3958,93 @@ MonoBehaviour:
   attackToSpawn: {fileID: 427889909179746995, guid: 46eea06248b3c8d48863ca94bcb05224, type: 3}
   projectileHolder: {fileID: 0}
   spawnDistance: 2
+  attackOriginator: {fileID: 1650880992}
+--- !u!1001 &1357730296
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 946230110}
+    m_Modifications:
+    - target: {fileID: 5386612649669315522, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386612649669315522, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -15.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386612649669315522, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386612649669315522, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386612649669315522, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386612649669315522, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386612649669315522, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386612649669315522, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386612649669315522, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386612649669315522, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716308293855367129, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_Name
+      value: Holy Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716308293855367129, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737161593782262155, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: maxHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737161593782262155, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: minHP
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737161593782262155, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: maxRes
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737161593782262155, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: minRes
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737161593782262155, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 853245824}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+--- !u!4 &1357730297 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5386612649669315522, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
+  m_PrefabInstance: {fileID: 1357730296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1358890158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4911,9 +5086,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
-  m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_Mass: 2
+  m_LinearDamping: 1
+  m_AngularDamping: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -5011,17 +5186,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f56c5150b9af04d80b00112efa49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Claure
-  joystick: {fileID: 1366843196}
-  speed: 7.8
-  trackDistance: 3
-  enemyTrackDistance: 5
-  distanceBuffer: 1.5
-  isSelected: 0
-  spriteRenderer: {fileID: 1650880987}
   health: 100
   attack: 10
   magic: 2
   resist: 8
+  speed: 7.8
+  atkMod: 0
+  magMod: 0
+  resMod: 0
+  poisoned: 0
+  resDebuffed: 0
+  spdDebuffed: 0
+  joystick: {fileID: 1366843196}
+  movementSpeed: 7.8
+  trackDistance: 3
+  enemyTrackDistance: 5
+  distanceBuffer: 1.5
+  moveLockDuration: 1
+  isSelected: 0
+  spriteRenderer: {fileID: 1650880987}
+  startingHealth: 100
+  startingAttack: 10
+  startingMagic: 2
+  startingResist: 8
   sp: 3
   isMoving: 0
   movementLock: 0
@@ -5029,7 +5216,7 @@ MonoBehaviour:
   healthCircle: {fileID: 42101882}
   enemiesInRange: []
   circleCollider: {fileID: 1650880991}
-  normalCD: 1
+  normalCD: 0.9
   skillCD: 8
   eveCD: 20
   normalAttack: {fileID: 1345500206}

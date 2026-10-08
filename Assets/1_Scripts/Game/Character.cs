@@ -4,13 +4,14 @@ using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Character : MonoBehaviour
+public class Character : GameEntity
 {
     [Header("Movement")]
     [SerializeField] protected FixedJoystick joystick;
-    [SerializeField] private float speed = 2.5f;
+    [SerializeField] private float movementSpeed = 2.5f;
     [SerializeField] private float trackDistance = 1.5f;
     [SerializeField] private float enemyTrackDistance = 1.5f;
+    [SerializeField] private float distanceBuffer = 1.5f;
 
     [Header("Selection")]
     public bool isSelected = false;
@@ -20,13 +21,12 @@ public class Character : MonoBehaviour
     private Animator animator;
 
     // Stats
-    [Header("Stats")]
-    [SerializeField] private int health = 100;
-    [SerializeField] private int attack = 5;
-    [SerializeField] private int magic = 5;
-    [SerializeField] private int resist = 5;
+    [Header("Starting Stats")]
+    [SerializeField] private int startingHealth = 100;
+    [SerializeField] private int startingAttack = 5;
+    [SerializeField] private int startingMagic = 5;
+    [SerializeField] private int startingResist = 5;
     [SerializeField] private int sp = 0;
-    private int currentHP = 100;
 
     // Movement
     [Header("View Only")]
@@ -45,6 +45,13 @@ public class Character : MonoBehaviour
         animator = GetComponent<Animator>();
 
         activePlayer = GetComponentInParent<Player>();
+
+        health = startingHealth;
+        attack = startingAttack;
+        magic = startingMagic;
+        resist = startingResist;
+        speed = movementSpeed;
+
         currentHP = health;
     }
 
@@ -86,6 +93,7 @@ public class Character : MonoBehaviour
         }
     }
 
+
     protected virtual void TrackActiveTarget() 
     {
         Vector3 newDir = Vector3.zero;
@@ -99,14 +107,16 @@ public class Character : MonoBehaviour
 
         float dist = activePlayer.inCombat ? enemyTrackDistance : trackDistance;
         float distanceToTarget = Vector2.Distance(trackPos, this.transform.position);
-
+        Vector3 minDistance = transform.position - trackPos;
 
         if (distanceToTarget >= dist)
         {
+            Vector3 step = newDir * speed * Time.deltaTime;
             transform.position += newDir * speed * Time.deltaTime;
             isMoving = true;
         }
-        else if (activePlayer.inCombat && distanceToTarget < enemyTrackDistance - 1.5f)
+        else if (activePlayer.inCombat && distanceToTarget < enemyTrackDistance - distanceBuffer ||
+            !activePlayer.inCombat && distanceToTarget < trackDistance - distanceBuffer)
         {
             newDir *= -1;
             transform.position += newDir * speed * Time.deltaTime;
@@ -160,57 +170,30 @@ public class Character : MonoBehaviour
     public void LevelUp()
     {
         health = Mathf.FloorToInt(health * (1 + 0.1f));
-        sp += 10;
+        AlterSP(10);
 
         for (int i = 0; i < 5; i++)
         {
             int stat = Random.Range(0, 4);
             int raiseVal = Random.Range(1, 5);
-            CHAR_STATS target = (CHAR_STATS)(stat);
+            STATS target = (STATS)(stat);
 
             AlterStat(target, raiseVal);
         }
     }
-    public void AlterHP(int val)
-    {
-        currentHP += val;
-        currentHP = Mathf.Clamp(currentHP, 0, health);   
 
+    public override void AlterHP(int val)
+    {
+        base.AlterHP(val);
         healthCircle.fillAmount = currentHP / (float)health;
     }
 
-    public void AlterStat(CHAR_STATS stat, int val)
-    {
-        switch (stat)
-        {
-            case CHAR_STATS.atk:
-                attack += val;
-                break;
-            case CHAR_STATS.mag:
-                magic += val;
-                break;
-            case CHAR_STATS.res:
-                resist += val;
-                break;
-            case CHAR_STATS.maxHp:
-                health += val;
-                break;
-            default:
-                if (GameDebugger.debugMode) Debug.Log("Alter stat random miss.");
-                break;
-        } 
-    }
-
-    public void AlterSP(int val)
+   public void AlterSP(int val)
     {
         sp += val;
     }
 
-    public enum CHAR_STATS
-    {
-        atk = 0,
-        mag,
-        res,
-        maxHp
-    };
+    public override void ClearSpdDebuff() {
+        speed = movementSpeed;
+    }
 }

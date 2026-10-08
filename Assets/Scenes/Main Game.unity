@@ -540,6 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
   attackToSpawn: {fileID: 427889909179746995, guid: 658a975506d21a340ad4561663a84032, type: 3}
   projectileHolder: {fileID: 227716788}
+  spawnDistance: 1.5
 --- !u!1001 &186314171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2038,6 +2039,7 @@ MonoBehaviour:
   speed: 10
   trackDistance: 7
   enemyTrackDistance: 9
+  distanceBuffer: 1.5
   isSelected: 0
   spriteRenderer: {fileID: 716157704}
   health: 100
@@ -2290,6 +2292,7 @@ MonoBehaviour:
   speed: 4
   trackDistance: 3
   enemyTrackDistance: 11
+  distanceBuffer: 1.5
   isSelected: 1
   spriteRenderer: {fileID: 0}
   health: 100
@@ -2664,6 +2667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
   attackToSpawn: {fileID: 427889909179746995, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
   projectileHolder: {fileID: 227716788}
+  spawnDistance: 1.5
 --- !u!1 &1076212810
 GameObject:
   m_ObjectHideFlags: 0
@@ -3865,6 +3869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
   attackToSpawn: {fileID: 427889909179746995, guid: 46eea06248b3c8d48863ca94bcb05224, type: 3}
   projectileHolder: {fileID: 0}
+  spawnDistance: 2
 --- !u!1 &1358890158
 GameObject:
   m_ObjectHideFlags: 0
@@ -5010,6 +5015,7 @@ MonoBehaviour:
   speed: 7.8
   trackDistance: 3
   enemyTrackDistance: 5
+  distanceBuffer: 1.5
   isSelected: 0
   spriteRenderer: {fileID: 1650880987}
   health: 100

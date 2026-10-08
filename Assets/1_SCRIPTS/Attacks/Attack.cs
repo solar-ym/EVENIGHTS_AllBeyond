@@ -8,6 +8,13 @@ public class Attack : MonoBehaviour
     [SerializeField] protected float speed = 0.5f;
     [SerializeField] protected bool ranged = true;
     [SerializeField] protected bool pierce = false;
+    [SerializeField] protected DamageCalculator.DAMAGE_TYPE dmgType = DamageCalculator.DAMAGE_TYPE.normal;
+
+    [Header("Additional Attack")]
+    [SerializeField] public bool hasAdditionalAttack = false;
+    [SerializeField] public bool staticAttack = true;
+    [SerializeField] private AttackSpawner nextAttackSpawner;
+    [SerializeField] public Vector3 nextAttackDirection;
 
     private bool isMoving = false;
     private Vector3 movementDirection = new Vector3 (0, 0, 0);
@@ -31,6 +38,10 @@ public class Attack : MonoBehaviour
 
         if (life < lifespan)
         {
+            if (hasAdditionalAttack)
+            {
+                this.transform.parent.transform.position += movementDirection * speed * Time.deltaTime;
+            } else
             if (ranged) this.transform.position += movementDirection * speed * Time.deltaTime;
         } else
         {
@@ -71,7 +82,15 @@ public class Attack : MonoBehaviour
                 target.AlterHP(CalculateDamage());
             }
 
-            if (!pierce) Destroy(this.gameObject);
+            if (hasAdditionalAttack)
+            {
+                nextAttackSpawner.SpawnAttack(nextAttackDirection);
+            }
+
+            if (!pierce)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 

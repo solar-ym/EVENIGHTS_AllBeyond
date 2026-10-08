@@ -72,7 +72,7 @@ public class Claure : Character
         }
         else
         {
-            trackPos = this.transform.position + joystick.GetDirAsVec3() * 1.5f;
+            trackPos = this.transform.position + joystick.GetDirAsVec3();
         }
 
         dir = trackPos - this.transform.position;

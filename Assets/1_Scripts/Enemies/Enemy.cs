@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using static Character;
 
-public class Enemy : MonoBehaviour
+public class Enemy : GameEntity
 {
     [Header("References")]
     [SerializeField] public GameObject spawnPoint;
@@ -200,39 +200,10 @@ public class Enemy : MonoBehaviour
     }
 
     // STAT MANIP -------------------------------------------------------------------
-    public void AlterHP(int val)
+    public override void AlterHP(int val)
     {
-        currentHP += val;
-        currentHP = Mathf.Clamp(currentHP, 0, health);
-
-        if (currentHP <= 0) Die();
+        base.AlterHP(val);
 
         healthBarFill.fillAmount = currentHP / (float)health;
     }
-
-    public void AlterStat(ENEMY_STATS stat, int val)
-    {
-        switch (stat)
-        {
-            case ENEMY_STATS.atk:
-                attack += val;
-                break;
-            case ENEMY_STATS.res:
-                resist += val;
-                break;
-            case ENEMY_STATS.maxHp:
-                health += val;
-                break;
-            default:
-                if (GameDebugger.debugMode) Debug.Log("Atler stat out of range.");
-                break;
-        }
-    }
-
-    public enum ENEMY_STATS
-    {
-        atk = 0,
-        res,
-        maxHp
-    };
 }

@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [Header("References")]
     [SerializeField] private Image xpBarFill;
     [SerializeField] private TextMeshProUGUI xpText;
+    [SerializeField] private GameObject deathScreen;
 
     [Header("Config")]
     [SerializeField] private float maxCharDistance = 20.0f;
@@ -35,7 +36,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        CheckIfAllDead();
+
         xpBarFill.fillAmount = experiencePts / (float)nextExpCap;
+
+        PollBuffs();
 
         if (!inCombat) return;
         
@@ -60,15 +65,37 @@ public class Player : MonoBehaviour
             } 
         }
 
-        PollBuffs();
-
         if (keyboard)
         {
+
             if (Keyboard.current.wKey.wasPressedThisFrame)
             {
                 characters[activeCharIndex].FindEnemyTarget();
                 characters[activeCharIndex].UseNormalAttack();
             }
+            if (Keyboard.current.eKey.wasPressedThisFrame)
+            {
+                characters[activeCharIndex].FindEnemyTarget();
+                characters[activeCharIndex].UseSkill();
+            }
+        }
+    }
+
+    private void CheckIfAllDead()
+    {
+        int i = 0;
+        foreach (Character character in characters)
+        {
+            if (character.state == ENTITY_STATE.dead)
+            {
+                i++;
+            }
+        }
+
+        if (i == 3)
+        {
+            Time.timeScale = 0;
+            deathScreen.SetActive(true);
         }
     }
 

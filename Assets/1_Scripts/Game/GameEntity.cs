@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+using static GameEntity;
 
 public class GameEntity : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameEntity : MonoBehaviour
     [SerializeField] public int magic = 5;
     [SerializeField] public int resist = 5;
     [SerializeField] protected float speed = 5;
+    public ENTITY_STATE state = ENTITY_STATE.idle;
     protected int currentHP = 100;
 
     // Stat Modifiers
@@ -34,8 +36,16 @@ public class GameEntity : MonoBehaviour
         private float poisonModifier = 0.01f; // percentage of hp taken per second
         private int spdDebuffStacks = 0; // max 3
 
-    private void Update()
+    private DamageNumber numberDisplaySpawner;
+
+    protected virtual void Start()
     {
+        numberDisplaySpawner = GetComponentInChildren<DamageNumber>();
+    }
+
+    protected virtual void Update()
+    {
+
         internalTime += Time.deltaTime;
 
         if (poisoned)
@@ -70,8 +80,11 @@ public class GameEntity : MonoBehaviour
            
             if (!thisBuff.hasActivated)
             {
-                TriggerBuff(thisBuff);
+                thisBuff.value = TriggerBuff(thisBuff);
                 thisBuff.hasActivated = true;
+            } else if (thisBuff.life >= thisBuff.lifeSpan)
+            {
+                ClearBuff(thisBuff);
             }
 
             buffs[i] = thisBuff;
@@ -84,8 +97,22 @@ public class GameEntity : MonoBehaviour
 
     public virtual void AlterHP(int val)
     {
+        if (state == ENTITY_STATE.dead) return;
+
         currentHP += val;
         currentHP = Mathf.Clamp(currentHP, 0, health);
+
+        if (val > 0)
+        {
+            numberDisplaySpawner.SpawnHealText(val);
+        }
+    }
+
+    public void SpawnDamageNumber(DamageCalculator.DAMAGE_TYPE damageType, int damageValue)
+    {
+        if (numberDisplaySpawner == null) numberDisplaySpawner = GetComponentInChildren<DamageNumber>();
+
+        numberDisplaySpawner.SpawnDamageNumber(damageType, damageValue);
     }
 
     public virtual void AlterStat(STATS stat, int val)
@@ -153,29 +180,39 @@ public class GameEntity : MonoBehaviour
 
     public void AddBuff(STATS affectedStat, float modifier, int buffOrDebuff, float lifespan)
     {
+
         BUFF modToAdd = new BUFF(
                 affectedStat,
                 modifier * buffOrDebuff,
                 lifespan
             );
 
+
         buffs.Add( modToAdd );
     }
 
-    private void TriggerBuff(BUFF buff)
+    private int TriggerBuff(BUFF buff)
     {
+        int val = 0;
         switch (buff.affectedStat)
         {
             case STATS.atk:
-                ModAtk(buff.modifier);
+                val = ModAtk(buff.modifier);
                 break;
             case STATS.mag:
-                ModMag(buff.modifier);
+                val = ModMag(buff.modifier);
                 break;
             case STATS.res:
-                ModRes(buff.modifier);
+                val = ModRes(buff.modifier);
                 break;
         }
+
+        return val;
+    }
+
+    private void ClearBuff(BUFF buff)
+    {
+        FlatBuff(buff.affectedStat, buff.value * -1);
     }
 
     public void FlatBuff(STATS stat, int mod)
@@ -194,19 +231,28 @@ public class GameEntity : MonoBehaviour
         }
     }
 
-    public virtual void ModAtk(float percentage)
+    public virtual int ModAtk(float percentage)
     {
-        atkMod += Mathf.FloorToInt(attack * percentage);
+        int val = Mathf.FloorToInt(attack * percentage);
+        atkMod += val;
+
+        return val;
     }
 
-    public virtual void ModMag(float percentage)
+    public virtual int ModMag(float percentage)
     {
-        magMod += Mathf.FloorToInt(magic * percentage);
+        int val = Mathf.FloorToInt(magic * percentage);
+        magMod += val;
+
+        return val;
     }
 
-    public virtual void ModRes(float percentage)
+    public virtual int ModRes(float percentage)
     {
-        resMod += Mathf.FloorToInt(resist * percentage);
+        int val = Mathf.FloorToInt(resist * percentage);
+        resMod += val;
+
+        return val;
     }
 
     public void CleanseMods()
@@ -231,14 +277,23 @@ public class GameEntity : MonoBehaviour
         {
             affectedStat = stat;
             modifier = mod;
+            value = 0;
             lifeSpan = span;
             life = 0.0f;
             hasActivated = false;
         }
         public STATS affectedStat;
         public float modifier;
+        public int value;
         public float lifeSpan;
         public float life;
         public bool hasActivated;
     };
+
+    public enum ENTITY_STATE
+    {
+        idle,
+        attacking,
+        dead
+    }
 }

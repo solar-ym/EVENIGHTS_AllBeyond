@@ -13,12 +13,11 @@ public class Shai : Character
 
     [Header("Attacks")]
     [SerializeField] AttackSpawner normalAttack;
+    [SerializeField] AttackSpawner skillAttack;
 
     protected override void Update()
     {
         base.Update();
-
-        if (internalNormalCD < 50f) internalNormalCD += Time.deltaTime;
 
         if (!isSelected && activePlayer.inCombat)
         {
@@ -34,6 +33,7 @@ public class Shai : Character
         if (enemiesInRange.Count == 0) return;
 
         float distance = circleCollider.radius;
+        if (enemiesInRange[0] == null) return;
         GameObject min = enemiesInRange[0].gameObject;
         int minIndex = 0;
 
@@ -41,6 +41,7 @@ public class Shai : Character
 
         foreach (Collider2D enemy in enemiesInRange)
         {
+            if (enemy == null || min == null) return;
             if (
                 Vector3.Distance(transform.position, enemy.transform.position)
                 <
@@ -53,10 +54,13 @@ public class Shai : Character
             i++;
         }
 
-        if (activePlayer.inCombat) target = enemiesInRange[minIndex].gameObject;
+        if (activePlayer.inCombat && enemiesInRange[minIndex] != null)
+            target = enemiesInRange[minIndex].gameObject;
+        else
+            target = null;
     }
     public override void UseNormalAttack() {
-        if (internalNormalCD < normalCD) return;
+        if (internalNormalCD < normalCD || state == ENTITY_STATE.dead) return;
         base.UseNormalAttack();
 
         Vector3 dir = Vector3.zero;
@@ -78,5 +82,31 @@ public class Shai : Character
         internalNormalCD = 0.0f;
     }
     public override void UseEve() { }
-    public override void UseSkill() { }
+    public override void UseSkill() 
+    {
+        if (internalSkillCD < skillCD || state == ENTITY_STATE.dead) return;
+        base.UseNormalAttack();
+
+        Vector3 dir = Vector3.zero;
+        Vector3 trackPos;
+        if (target != null)
+        {
+            trackPos = target.transform.position;
+        }
+        else
+        {
+            trackPos = this.transform.position + joystick.GetDirAsVec3() * -1.5f;
+        }
+
+        dir = trackPos - this.transform.position;
+        dir.Normalize();
+
+        skillAttack.SpawnAttack(dir);
+
+        // Atk buff
+        int atkBuffVal = Mathf.FloorToInt(magic * (0.3f));
+        activePlayer.BuffAllCharacters(GameEntity.STATS.atk, atkBuffVal, 6.0f);
+
+        internalSkillCD = 0.0f;
+    }
 }

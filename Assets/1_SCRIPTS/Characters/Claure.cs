@@ -13,13 +13,12 @@ public class Claure : Character
 
     [Header("Attacks")]
     [SerializeField] AttackSpawner normalAttack;
+    [SerializeField] AttackSpawner skillAttack;
 
 
     protected override void Update()
     {
         base.Update();
-
-        if (internalNormalCD < 50f) internalNormalCD += Time.deltaTime;
 
         if (!isSelected && activePlayer.inCombat)
         {
@@ -35,6 +34,7 @@ public class Claure : Character
         if (enemiesInRange.Count == 0) return;
 
         float distance = circleCollider.radius;
+        if (enemiesInRange[0] == null) return;
         GameObject max = enemiesInRange[0].gameObject;
         int maxIndex = 0;
 
@@ -42,6 +42,7 @@ public class Claure : Character
 
         foreach (Collider2D enemy in enemiesInRange)
         {
+            if (enemy == null || max == null) return;
             if (
                 Vector3.Distance(transform.position, enemy.transform.position)
                 >
@@ -54,10 +55,13 @@ public class Claure : Character
             i++;
         }
 
-        if (activePlayer.inCombat) target = enemiesInRange[maxIndex].gameObject;
+        if (activePlayer.inCombat && enemiesInRange[maxIndex] != null)
+            target = enemiesInRange[maxIndex].gameObject;
+        else
+            target = null;
     }
     public override void UseNormalAttack() {
-        if (internalNormalCD < normalCD) return;
+        if (internalNormalCD < normalCD || state == ENTITY_STATE.dead) return;
         base.UseNormalAttack();
 
         Vector3 dir = Vector3.zero;
@@ -79,5 +83,31 @@ public class Claure : Character
         internalNormalCD = 0.0f;
     }
     public override void UseEve() { }
-    public override void UseSkill() { }
+    public override void UseSkill() 
+    {
+        if (internalSkillCD < skillCD || state == ENTITY_STATE.dead) return;
+        base.UseSkill();
+
+        Vector3 dir = Vector3.zero;
+        Vector3 trackPos;
+        if (target != null)
+        {
+            trackPos = target.transform.position;
+        }
+        else
+        {
+            trackPos = this.transform.position + joystick.GetDirAsVec3();
+        }
+
+        dir = trackPos - this.transform.position;
+        dir.Normalize();
+
+        skillAttack.SpawnAttack(dir);
+
+        // Buff res
+        int resBuffVal = Mathf.FloorToInt(magic * (0.6f));
+        AddBuff(STATS.res, resBuffVal, 1, 3.0f);
+
+        internalSkillCD = 0.0f;
+    }
 }

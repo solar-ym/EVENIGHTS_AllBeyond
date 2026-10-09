@@ -111,7 +111,7 @@ MonoBehaviour:
   speed: 6
   ranged: 1
   pierce: 0
-  knockbackMod: 0
+  trackTarget: 0
   dmgType: 0
   hasAdditionalAttack: 1
   staticAttack: 1

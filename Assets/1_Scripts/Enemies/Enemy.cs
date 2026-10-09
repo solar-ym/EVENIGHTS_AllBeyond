@@ -33,7 +33,6 @@ public class Enemy : GameEntity
     [SerializeField] float minSpd = 2;
     [SerializeField] float maxSpd = 5;
 
-    public ENEMY_STATE state = ENEMY_STATE.idle;
     private Character target;
 
     private Animator animator;
@@ -48,15 +47,10 @@ public class Enemy : GameEntity
 
     private float time = 0.0f;
 
-    public enum ENEMY_STATE
+    protected override void Start()
     {
-        idle,
-        attacking,
-        dead
-    }
+        base.Start();
 
-    void Start()
-    {
         health = Random.Range(minHP, maxHP);
         attack = Random.Range(minAtk, maxAtk);
         resist = Random.Range(minRes, maxRes);
@@ -68,9 +62,11 @@ public class Enemy : GameEntity
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    protected override void Update()
     {
-        if (state == ENEMY_STATE.dead) {
+        base.Update();
+
+        if (state == ENTITY_STATE.dead) {
             if (despawnAfterDeath)
             {
                 time += Time.deltaTime;
@@ -83,13 +79,13 @@ public class Enemy : GameEntity
 
         if (!WithinSpawnRange() || returningToSpawn)
         {
-            state = ENEMY_STATE.idle;
+            state = ENTITY_STATE.idle;
             ReturnToSpawn();
         }
 
-        if (state == ENEMY_STATE.idle && WithinSpawnRange()) return;
+        if (state == ENTITY_STATE.idle && WithinSpawnRange()) return;
 
-        else if (state == ENEMY_STATE.attacking && WithinSpawnRange())
+        else if (state == ENTITY_STATE.attacking && WithinSpawnRange())
         {
             internalNormalCD += Time.deltaTime;
 
@@ -104,11 +100,11 @@ public class Enemy : GameEntity
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (state == ENEMY_STATE.dead) return;
+        if (state == ENTITY_STATE.dead) return;
 
         if (collision.gameObject.tag == "Character" && !collision.isTrigger)
         {
-            state = ENEMY_STATE.attacking;
+            state = ENTITY_STATE.attacking;
             target = collision.gameObject.GetComponent<Character>();
             collision.gameObject.GetComponent<Character>().StartCombat();
         }
@@ -170,7 +166,7 @@ public class Enemy : GameEntity
     // COMBAT -----------------------------------------------------------------------
 
     protected virtual void UseNormalAttack() {
-        if (state != ENEMY_STATE.attacking || target == null) return;
+        if (state != ENTITY_STATE.attacking || target == null) return;
 
         ResetAllTriggers();
         animator.SetTrigger("Normal");
@@ -193,7 +189,7 @@ public class Enemy : GameEntity
         isMoving = false;
         target = null;
 
-        state = ENEMY_STATE.dead;
+        state = ENTITY_STATE.dead;
         animator.SetTrigger("Die");
 
         spriteRenderer.sortingLayerName = "Enemy Behind";

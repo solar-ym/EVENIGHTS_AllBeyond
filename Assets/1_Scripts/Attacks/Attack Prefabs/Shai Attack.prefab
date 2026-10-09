@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3212502697391991727}
   - component: {fileID: 5697371426205369671}
   m_Layer: 0
-  m_Name: Claure Attack
+  m_Name: Shai Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,12 +83,12 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -6839618312741258130, guid: c580b9a00f5972d42ab07c6caad0f9a4, type: 3}
+  m_Sprite: {fileID: 8885963787732830434, guid: 273cf140f3a604d46a09522c35e00a6a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.53, y: 3.14}
+  m_Size: {x: 1.53, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -106,15 +106,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Attack
   thisAttacker: {fileID: 0}
-  lifespan: 0.7
+  lifespan: 4
   targetEnemy: 1
-  speed: 0
-  ranged: 0
+  speed: 8
+  ranged: 1
   pierce: 1
-  knockbackMod: 2
+  trackTarget: 0
   dmgType: 0
   hasAdditionalAttack: 0
-  staticAttack: 1
+  staticAttack: 0
   nextAttackSpawner: {fileID: 0}
   nextAttackDirection: {x: 0, y: 0, z: 0}
 --- !u!70 &5697371426205369671
@@ -151,6 +151,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.031799555}
-  m_Size: {x: 3.41, y: 4.95}
-  m_Direction: 0
+  m_Offset: {x: 0.29976156, y: -0.00000003573436}
+  m_Size: {x: 1.3704032, y: 0.63000715}
+  m_Direction: 1

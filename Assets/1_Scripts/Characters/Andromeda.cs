@@ -33,6 +33,7 @@ public class Andromeda : Character
         if (enemiesInRange.Count == 0) return;
 
         float distance = circleCollider.radius;
+        if (enemiesInRange[0] == null) return;
         GameObject min = enemiesInRange[0].gameObject;
         int minIndex = 0;
 
@@ -40,6 +41,7 @@ public class Andromeda : Character
 
         foreach (Collider2D enemy in enemiesInRange)
         {
+            if (enemy == null || min == null) return;
             if (
                 Vector3.Distance(transform.position, enemy.transform.position)
                 <
@@ -51,10 +53,13 @@ public class Andromeda : Character
             i++;
         }
 
-        if (activePlayer.inCombat) target = enemiesInRange[minIndex].gameObject;
+        if (activePlayer.inCombat && enemiesInRange[minIndex] != null) 
+            target = enemiesInRange[minIndex].gameObject;
+        else
+            target = null;
     }
     public override void UseNormalAttack() {
-        if (internalNormalCD < normalCD) return;
+        if (internalNormalCD < normalCD || state == ENTITY_STATE.dead) return;
 
         base.UseNormalAttack();
 
@@ -73,20 +78,23 @@ public class Andromeda : Character
 
         normalAttack.SpawnAttack(dir);
 
-        int otherHealVal = Mathf.FloorToInt(0.5f * attack);
-        activePlayer.HealAllCharacters(otherHealVal);
-
+        if (activePlayer.inCombat)
+        {
+            int otherHealVal = Mathf.FloorToInt(0.5f * attack);
+            activePlayer.HealAllCharacters(otherHealVal);
+        }
+        
         internalNormalCD = 0.0f;
     }
     public override void UseEve() { }
     public override void UseSkill() 
     {
-        if (internalSkillCD < skillCD) return;
+        if (internalSkillCD < skillCD || state == ENTITY_STATE.dead) return;
 
         int healValue = Mathf.CeilToInt(magic * (1.3f));
         activePlayer.HealAllCharacters(healValue);
 
-        int resBuffVal = Mathf.FloorToInt(magic * (1.3f));
+        int resBuffVal = Mathf.FloorToInt(magic * (0.3f));
         activePlayer.BuffAllCharacters(GameEntity.STATS.res, resBuffVal, 10.0f);
 
         internalSkillCD = 0.0f;

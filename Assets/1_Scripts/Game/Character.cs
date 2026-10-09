@@ -3,6 +3,7 @@ using System.Linq;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
+using static Enemy;
 
 public class Character : GameEntity
 {
@@ -45,8 +46,10 @@ public class Character : GameEntity
     protected float internalSkillCD = 0.0f;
     protected float internalEveCD = 0.0f;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
@@ -61,8 +64,16 @@ public class Character : GameEntity
         currentHP = health;
     }
 
-    protected virtual void Update()
+    protected override void Update()
     {
+        // Death check
+        if (state == ENTITY_STATE.dead) return;
+
+        base.Update();
+
+        if (currentHP <= 0) Die();
+
+        // Cooldown timers
         if (internalNormalCD < 50f) internalNormalCD += Time.deltaTime;
         if (internalSkillCD < 50f) internalSkillCD += Time.deltaTime;
 
@@ -105,6 +116,8 @@ public class Character : GameEntity
 
     protected virtual void TrackActiveTarget() 
     {
+        if (target == null) return;
+
         Vector3 newDir = Vector3.zero;
         Vector3 joystickDir = new Vector3(joystick.Direction.x, joystick.Direction.y, 0.0f);
         Vector3 trackPos = target.transform.position + (joystick.GetDirAsVec3());
@@ -147,14 +160,14 @@ public class Character : GameEntity
     public List<Collider2D> enemiesInRange = new List<Collider2D>();
     void FixedUpdate()
     {
-        enemiesInRange.Clear();
+        enemiesInRange.RemoveAll(x => x.gameObject.GetComponent<GameEntity>().state == ENTITY_STATE.dead);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!enemiesInRange.Contains(collision) && collision.gameObject.tag == "Enemy" && !collision.isTrigger)
+        if (!enemiesInRange.Contains(collision) && collision.gameObject.CompareTag("Enemy") && !collision.isTrigger)
         {
-            if (collision.gameObject.GetComponent<Enemy>().state != Enemy.ENEMY_STATE.dead) enemiesInRange.Add(collision);
+            if (collision.gameObject.GetComponent<Enemy>().state != Enemy.ENTITY_STATE.dead) enemiesInRange.Add(collision);
         }
     }
 
@@ -164,7 +177,10 @@ public class Character : GameEntity
         movementLock = true;
     }
     public virtual void UseEve() { }
-    public virtual void UseSkill() { }
+    public virtual void UseSkill() {
+        FindEnemyTarget();
+        movementLock = true;
+    }
 
     public void StartCombat()
     {
@@ -173,6 +189,18 @@ public class Character : GameEntity
     public void EndCombat()
     {
         activePlayer.inCombat = false;
+    }
+
+    protected virtual void Die()
+    {
+        spriteRenderer.color = Color.gray;
+        //ResetAllTriggers();
+        isMoving = false;
+        animator.SetBool("isMoving", isMoving);
+        target = null;
+
+        state = ENTITY_STATE.dead;
+        //animator.SetTrigger("Die");
     }
 
     // STAT MANIP -------------------------------------------------------------------

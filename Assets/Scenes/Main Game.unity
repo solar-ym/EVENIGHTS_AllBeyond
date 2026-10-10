@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyToSpawn: {fileID: 5716308293855367129, guid: 630074611c3e95a41bb75d2bc324f89a, type: 3}
   spawnPoint: {fileID: 487465310}
-  spawnTimer: 5
+  spawnTimer: 8
 --- !u!1 &487909960
 GameObject:
   m_ObjectHideFlags: 0

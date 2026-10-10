@@ -114,6 +114,7 @@ public class Player : MonoBehaviour
     private void LevelUp()
     {
         if (level < 99) level++;
+        PersistentValues.playerLevel = level;
 
         foreach (Character c in characters)
         {

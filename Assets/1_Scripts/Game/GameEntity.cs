@@ -37,6 +37,7 @@ public class GameEntity : MonoBehaviour
         private int spdDebuffStacks = 0; // max 3
 
     private DamageNumber numberDisplaySpawner;
+    protected float originalSpeed = 0.0f;
 
     protected virtual void Start()
     {
@@ -152,7 +153,7 @@ public class GameEntity : MonoBehaviour
 
         spdDebuffStacks = Mathf.Clamp(spdDebuffStacks + 1, 0, 3);
 
-        speed = speed * (0.05f * spdDebuffStacks);
+        speed = speed * (0.05f * (4 - spdDebuffStacks));
 
         spdDebuffed = true;
         spdDebufftimer = 0.0f;
@@ -164,16 +165,19 @@ public class GameEntity : MonoBehaviour
         if (spdDebuffStacks == 0)
         {
             spdDebuffed = false;
+            speed = originalSpeed;
             return;
         }
 
-        speed = speed * (0.05f * spdDebuffStacks);
+        speed = speed * (0.05f * (4 - spdDebuffStacks));
     }
 
     private void PoisonDamage()
     {
         int poisonDmg = Mathf.FloorToInt(poisonModifier * health * -1);
         AlterHP(poisonDmg);
+
+        numberDisplaySpawner.SpawnDamageNumber(DamageCalculator.DAMAGE_TYPE.poison, poisonDmg);
     }
 
     // Stat Mod Manip -------------------------------------------------------

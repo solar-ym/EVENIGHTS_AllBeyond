@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using static GameEntity;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Player : MonoBehaviour
 {
@@ -160,6 +161,13 @@ public class Player : MonoBehaviour
         foreach (Character c in characters)
         {
             c.AlterHP(value);
+        }
+    }
+    public virtual void ReviveAllCharacters()
+    {
+        foreach (Character c in characters)
+        {
+            c.Revive();
         }
     }
 

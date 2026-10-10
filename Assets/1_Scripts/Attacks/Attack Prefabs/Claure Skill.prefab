@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2612370069582340373}
   - component: {fileID: 3212502697391991727}
   - component: {fileID: 5697371426205369671}
+  - component: {fileID: 206353170049395553}
   m_Layer: 0
   m_Name: Claure Skill
   m_TagString: Untagged
@@ -106,15 +107,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Attack
   thisAttacker: {fileID: 0}
-  lifespan: 0.5
+  lifespan: 1
   targetEnemy: 1
-  speed: 0
-  ranged: 0
+  speed: 10
+  ranged: 1
   pierce: 1
   trackTarget: 0
   dmgType: 2
   hasAdditionalAttack: 0
-  staticAttack: 1
+  staticAttack: 0
   nextAttackSpawner: {fileID: 0}
   nextAttackDirection: {x: 0, y: 0, z: 0}
 --- !u!70 &5697371426205369671
@@ -154,3 +155,39 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.031799555}
   m_Size: {x: 5.46, y: 8.45}
   m_Direction: 0
+--- !u!58 &206353170049395553
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427889909179746995}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 2.5

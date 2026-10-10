@@ -14,6 +14,7 @@ public class Andromeda : Character
 
     [Header("Attacks")]
     [SerializeField] AttackSpawner normalAttack;
+    [SerializeField] AttackSpawner eveAttack;
 
     protected override void Update()
     {
@@ -86,10 +87,40 @@ public class Andromeda : Character
         
         internalNormalCD = 0.0f;
     }
-    public override void UseEve() { }
+    public override void UseEve()
+    {
+        if (internalEveCD < eveCD || state == ENTITY_STATE.dead) return;
+        base.UseEve();
+
+        Vector3 dir = Vector3.zero;
+        Vector3 trackPos;
+        if (target != null)
+        {
+            trackPos = target.transform.position;
+        }
+        else
+        {
+            trackPos = this.transform.position + joystick.GetDirAsVec3() * -1.5f;
+        }
+
+        dir = trackPos - this.transform.position;
+        dir.Normalize();
+
+        int damageBoost = Mathf.CeilToInt(0.5f * attack);
+        eveAttack.SpawnAttack(dir, damageBoost);
+
+        activePlayer.ReviveAllCharacters();
+
+        int otherHealVal = Mathf.CeilToInt(8.0f * magic);
+        activePlayer.HealAllCharacters(otherHealVal);
+
+        internalEveCD = 0.0f;
+    }
     public override void UseSkill() 
     {
         if (internalSkillCD < skillCD || state == ENTITY_STATE.dead) return;
+
+        base.UseSkill();
 
         int healValue = Mathf.CeilToInt(magic * (1.3f));
         activePlayer.HealAllCharacters(healValue);

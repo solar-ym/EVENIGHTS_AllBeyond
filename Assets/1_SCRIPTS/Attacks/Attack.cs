@@ -10,8 +10,12 @@ public class Attack : MonoBehaviour
     [SerializeField] protected float speed = 0.5f;
     [SerializeField] protected bool ranged = true;
     [SerializeField] protected bool pierce = false;
-    [SerializeField] protected bool trackTarget = false;
     [SerializeField] protected DamageCalculator.DAMAGE_TYPE dmgType = DamageCalculator.DAMAGE_TYPE.normal;
+
+    [Header("Special Effects")]
+    [SerializeField] protected bool inflictSlow = false;
+    [SerializeField] protected bool inflictPoison = false;
+    [SerializeField] protected float poisonModifer = 0.01f;
 
     [Header("Additional Attack")]
     [SerializeField] public bool hasAdditionalAttack = false;
@@ -22,6 +26,7 @@ public class Attack : MonoBehaviour
     private bool isMoving = false;
     private Vector3 movementDirection = new Vector3 (0, 0, 0);
 
+    int boostedDmg = 0;
     private float life = 0.0f;
 
     // Visuals
@@ -64,6 +69,20 @@ public class Attack : MonoBehaviour
         life = 0.0f;
     }
 
+    public virtual void TriggerAttack(Vector3 direction, int boost)
+    {
+        movementDirection = direction;
+
+        float zAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0, 0, zAngle);
+        isMoving = true;
+
+        life = 0.0f;
+
+        boostedDmg = boost * -1;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string targetTag = "Enemy";
@@ -84,7 +103,7 @@ public class Attack : MonoBehaviour
 
             if (target.state != GameEntity.ENTITY_STATE.dead)
             {
-                dmgVal = CalculateDamage(thisAttacker, target);
+                dmgVal = CalculateDamage(thisAttacker, target) + boostedDmg;
                 target.AlterHP(dmgVal);
 
                 // Additional attack effect stuff
@@ -96,6 +115,16 @@ public class Attack : MonoBehaviour
                 if (dmgType == DamageCalculator.DAMAGE_TYPE.cursed)
                 {
                     if (dmgVal > 1) thisAttacker.AlterHP(dmgVal / 2);
+                }
+
+                if (inflictPoison)
+                {
+                    target.Poison(poisonModifer);
+                }
+
+                if (inflictSlow)
+                {
+                    target.DebuffSpd();
                 }
 
                 // Spawn additional attack

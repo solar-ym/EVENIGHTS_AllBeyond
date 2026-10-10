@@ -55,6 +55,7 @@ public class Enemy : GameEntity
         attack = Random.Range(minAtk, maxAtk);
         resist = Random.Range(minRes, maxRes);
         speed = Random.Range(minSpd, maxSpd);
+        originalSpeed = speed;
 
         currentHP = health;
 

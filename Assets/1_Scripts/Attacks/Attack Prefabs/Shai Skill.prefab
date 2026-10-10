@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shai Attack
       objectReference: {fileID: 0}
+    - target: {fileID: 2612370069582340373, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3319418985317669071, guid: 8f96454f5ebfab442985a88a32589310, type: 3}
     - target: {fileID: 3212502697391991727, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
       propertyPath: staticAttack
       value: 0
@@ -157,6 +161,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3687181567486673872, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697371426205369671, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.555181
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697371426205369671, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8939756
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697371426205369671, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.29976133
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697371426205369671, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
+      propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

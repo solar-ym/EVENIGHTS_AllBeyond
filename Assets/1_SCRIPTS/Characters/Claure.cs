@@ -14,11 +14,27 @@ public class Claure : Character
     [Header("Attacks")]
     [SerializeField] AttackSpawner normalAttack;
     [SerializeField] AttackSpawner skillAttack;
+    [SerializeField] AttackSpawner specialNormalAttack;
+    [SerializeField] AttackSpawner eveAttack;
 
+    // Special state
+    private bool isInSpecialEveState = false;
+    private float specialCounter = 0.0f;
+    private float specialDuration = 10.0f;
 
     protected override void Update()
     {
         base.Update();
+
+        if (isInSpecialEveState)
+        {
+            specialCounter += Time.deltaTime;
+            if (specialCounter >= specialDuration)
+            {
+                specialCounter = 0.0f;
+                isInSpecialEveState = false;
+            }
+        }
 
         if (!isSelected && activePlayer.inCombat)
         {
@@ -78,11 +94,43 @@ public class Claure : Character
         dir = trackPos - this.transform.position;
         dir.Normalize();
 
-        normalAttack.SpawnAttack(dir);
+        if (!isInSpecialEveState)
+        {
+            normalAttack.SpawnAttack(dir);
+        } else
+        {
+            int damageBoost = Mathf.CeilToInt(1.5f * magic);
+            specialNormalAttack.SpawnAttack(dir,  damageBoost);
+        }
 
-        internalNormalCD = 0.0f;
+            internalNormalCD = 0.0f;
     }
-    public override void UseEve() { }
+    public override void UseEve()
+    {
+        if (internalEveCD < eveCD || state == ENTITY_STATE.dead) return;
+        base.UseEve();
+
+        Vector3 dir = Vector3.zero;
+        Vector3 trackPos;
+        if (target != null)
+        {
+            trackPos = target.transform.position;
+        }
+        else
+        {
+            trackPos = this.transform.position + joystick.GetDirAsVec3();
+        }
+
+        dir = trackPos - this.transform.position;
+        dir.Normalize();
+
+        int damageBoost = Mathf.CeilToInt(2.0f * magic);
+        eveAttack.SpawnAttack(dir);
+
+        isInSpecialEveState = true;
+
+        internalEveCD = 0.0f;
+    }
     public override void UseSkill() 
     {
         if (internalSkillCD < skillCD || state == ENTITY_STATE.dead) return;

@@ -51,12 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafebf17b121dda42b457bc9ef384e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageNumber
-  damageType: 0
   normalDamage: {fileID: 3113763907590161608, guid: 40453882a5648204bb99d59daed23273, type: 3}
   shadeDamage: {fileID: 3113763907590161608, guid: a52beace8286c7646bf99c0584e6826f, type: 3}
   cursedDamage: {fileID: 3113763907590161608, guid: 6105ad29c8c37834fb8ee2bf5d114458, type: 3}
   holyDamage: {fileID: 3113763907590161608, guid: 9da21a613824bac4e834469032c12da4, type: 3}
   healText: {fileID: 3113763907590161608, guid: 19df3cd70d89fca439f1c0cd020bee59, type: 3}
+  poisonText: {fileID: 3113763907590161608, guid: 1b0d2d4b022aaa948aae663a7169d9e6, type: 3}
 --- !u!223 &3333203435969720242
 Canvas:
   m_ObjectHideFlags: 0

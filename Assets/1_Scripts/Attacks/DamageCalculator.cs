@@ -7,7 +7,8 @@ public static class DamageCalculator
         normal,
         cursed,
         shade,
-        holy
+        holy,
+        poison
     }
     public static int CalculateDamage(GameEntity attacker, GameEntity target, DAMAGE_TYPE dmgType)
     {

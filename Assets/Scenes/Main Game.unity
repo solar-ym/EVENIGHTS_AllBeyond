@@ -634,7 +634,7 @@ PrefabInstance:
       objectReference: {fileID: 7928875787843815923, guid: 5a5e7413a4b91e14aa085bcbfe53e7ab, type: 3}
     - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_RaycastTarget
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Pivot.x
@@ -720,10 +720,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fixed Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: snapX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: snapY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1752555647, guid: 5a5e7413a4b91e14aa085bcbfe53e7ab, type: 3}
+    - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -841,6 +857,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1189878596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &272343916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272343917}
+  - component: {fileID: 272343918}
+  m_Layer: 0
+  m_Name: Eve Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &272343917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272343916}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1650880985}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &272343918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272343916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7f1931ff071574b82651f723d71dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
+  attackToSpawn: {fileID: 427889909179746995, guid: a90c09541ec721c4aa1be1a0316a6e24, type: 3}
+  projectileHolder: {fileID: 0}
+  spawnDistance: 3
+  attackOriginator: {fileID: 1650880992}
 --- !u!1 &277085630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,7 +1476,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 725.7207, y: -70}
+  m_AnchoredPosition: {x: 1217.0464, y: -70}
   m_SizeDelta: {x: 584.6976, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &371890114
@@ -1610,6 +1674,54 @@ MonoBehaviour:
   triggerFunc: 1
   triggerEvent: 0
   preventMultipleActivations: 0
+--- !u!1 &416161900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416161901}
+  - component: {fileID: 416161902}
+  m_Layer: 0
+  m_Name: Special Normal Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &416161901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416161900}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1650880985}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &416161902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416161900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7f1931ff071574b82651f723d71dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
+  attackToSpawn: {fileID: 427889909179746995, guid: 537a442ccaabe1044b04959cc439094d, type: 3}
+  projectileHolder: {fileID: 227716788}
+  spawnDistance: 3
+  attackOriginator: {fileID: 1650880992}
 --- !u!1 &441103913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,6 +2622,7 @@ Transform:
   m_Children:
   - {fileID: 1070193310}
   - {fileID: 166262624}
+  - {fileID: 1400428317}
   - {fileID: 2028625381}
   m_Father: {fileID: 136947702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2607,7 +2720,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDamping: 1
+  m_LinearDamping: 5
   m_AngularDamping: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -2617,7 +2730,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -2742,6 +2855,7 @@ MonoBehaviour:
   eveCD: 10
   normalAttack: {fileID: 1070193311}
   skillAttack: {fileID: 166262625}
+  eveAttack: {fileID: 1400428318}
 --- !u!1 &754209462
 GameObject:
   m_ObjectHideFlags: 0
@@ -2778,6 +2892,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 138390394}
+  - {fileID: 836233290}
   - {fileID: 320654981}
   m_Father: {fileID: 136947702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2875,7 +2990,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDamping: 1
+  m_LinearDamping: 5
   m_AngularDamping: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -2885,7 +3000,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -2978,7 +3093,7 @@ MonoBehaviour:
   attack: 4
   magic: 10
   resist: 6
-  speed: 4
+  speed: 5
   state: 0
   atkMod: 0
   magMod: 0
@@ -2987,7 +3102,7 @@ MonoBehaviour:
   resDebuffed: 0
   spdDebuffed: 0
   joystick: {fileID: 1366843196}
-  movementSpeed: 4
+  movementSpeed: 5
   trackDistance: 3
   enemyTrackDistance: 11
   distanceBuffer: 1.5
@@ -3009,6 +3124,7 @@ MonoBehaviour:
   skillCD: 10
   eveCD: 15
   normalAttack: {fileID: 138390395}
+  eveAttack: {fileID: 836233291}
 --- !u!1 &754870580
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,6 +3267,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785150049}
   m_CullTransparentMesh: 1
+--- !u!1 &836233289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 836233290}
+  - component: {fileID: 836233291}
+  m_Layer: 0
+  m_Name: Eve Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &836233290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836233289}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 754209463}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &836233291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836233289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7f1931ff071574b82651f723d71dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
+  attackToSpawn: {fileID: 7121526796216717264, guid: 50aaa3a5c9b4ec14f8cae9ee62f2b802, type: 3}
+  projectileHolder: {fileID: 227716788}
+  spawnDistance: 5
+  attackOriginator: {fileID: 754209470}
 --- !u!1 &853245824
 GameObject:
   m_ObjectHideFlags: 0
@@ -3182,6 +3346,100 @@ Transform:
   m_Children: []
   m_Father: {fileID: 946230110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &884599105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 884599106}
+  - component: {fileID: 884599109}
+  - component: {fileID: 884599108}
+  - component: {fileID: 884599107}
+  m_Layer: 5
+  m_Name: Fill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &884599106
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884599105}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1725246832}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 170, y: 125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &884599107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884599105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 3937245684781987160, guid: 5a5e7413a4b91e14aa085bcbfe53e7ab, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 2
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &884599108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884599105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa47156c62e70e4da0351ace560042e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillCDVisual
+  fill: {fileID: 884599107}
+  cooldown: 10
+  attachedChar: {fileID: 716157709}
+  skillType: 2
+  timer: 0
+  running: 1
+--- !u!222 &884599109
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884599105}
+  m_CullTransparentMesh: 1
 --- !u!1 &894541098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3227,7 +3485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
   attackToSpawn: {fileID: 427889909179746995, guid: be29992426d10c44788d1c4b61fa5f55, type: 3}
-  projectileHolder: {fileID: 0}
+  projectileHolder: {fileID: 227716788}
   spawnDistance: 3
   attackOriginator: {fileID: 1650880992}
 --- !u!1 &946230109
@@ -3485,7 +3743,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 170, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076212812
 MonoBehaviour:
@@ -4876,6 +5134,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1400428316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1400428317}
+  - component: {fileID: 1400428318}
+  m_Layer: 0
+  m_Name: Eve Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1400428317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400428316}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 716157702}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1400428318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400428316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7f1931ff071574b82651f723d71dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
+  attackToSpawn: {fileID: 427889909179746995, guid: ef9b740ebb85a1641b6301a384808498, type: 3}
+  projectileHolder: {fileID: 227716788}
+  spawnDistance: 1.5
+  attackOriginator: {fileID: 716157709}
 --- !u!1 &1439682515
 GameObject:
   m_ObjectHideFlags: 0
@@ -4979,8 +5285,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1452060192}
+  - component: {fileID: 1452060196}
   - component: {fileID: 1452060194}
   - component: {fileID: 1452060193}
+  - component: {fileID: 1452060195}
   m_Layer: 5
   m_Name: Eve
   m_TagString: Untagged
@@ -5046,6 +5354,97 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452060191}
   m_CullTransparentMesh: 1
+--- !u!61 &1452060195
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452060191}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1452060196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452060191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7065e5a7be317488af97caab3929c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TappableObj
+  functionToCall:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1650880992}
+        m_TargetAssemblyTypeName: Claure, Assembly-CSharp
+        m_MethodName: UseEve
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 354917667}
+        m_TargetAssemblyTypeName: SkillCDVisual, Assembly-CSharp
+        m_MethodName: RestartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  eventToTrigger: []
+  triggerFunc: 1
+  triggerEvent: 0
+  preventMultipleActivations: 0
 --- !u!1 &1475636087
 GameObject:
   m_ObjectHideFlags: 0
@@ -6382,6 +6781,8 @@ Transform:
   m_Children:
   - {fileID: 1345500205}
   - {fileID: 894541099}
+  - {fileID: 416161901}
+  - {fileID: 272343917}
   - {fileID: 1558904574}
   m_Father: {fileID: 136947702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6479,7 +6880,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDamping: 1
+  m_LinearDamping: 5
   m_AngularDamping: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -6489,7 +6890,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -6582,7 +6983,7 @@ MonoBehaviour:
   attack: 10
   magic: 2
   resist: 8
-  speed: 7.8
+  speed: 8.8
   state: 0
   atkMod: 0
   magMod: 0
@@ -6591,7 +6992,7 @@ MonoBehaviour:
   resDebuffed: 0
   spdDebuffed: 0
   joystick: {fileID: 1366843196}
-  movementSpeed: 7.8
+  movementSpeed: 8.8
   trackDistance: 3
   enemyTrackDistance: 5
   distanceBuffer: 1.5
@@ -6614,6 +7015,8 @@ MonoBehaviour:
   eveCD: 20
   normalAttack: {fileID: 1345500206}
   skillAttack: {fileID: 894541100}
+  specialNormalAttack: {fileID: 416161902}
+  eveAttack: {fileID: 272343918}
 --- !u!1 &1654485262
 GameObject:
   m_ObjectHideFlags: 0
@@ -6695,7 +7098,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 190, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1683343246
 MonoBehaviour:
@@ -6788,8 +7191,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1725246832}
+  - component: {fileID: 1725246836}
   - component: {fileID: 1725246834}
   - component: {fileID: 1725246833}
+  - component: {fileID: 1725246835}
   m_Layer: 5
   m_Name: Eve
   m_TagString: Untagged
@@ -6808,7 +7213,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 884599106}
   m_Father: {fileID: 371890113}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -6854,6 +7260,97 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725246831}
   m_CullTransparentMesh: 1
+--- !u!61 &1725246835
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725246831}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1725246836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725246831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7065e5a7be317488af97caab3929c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TappableObj
+  functionToCall:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 716157709}
+        m_TargetAssemblyTypeName: Shai, Assembly-CSharp
+        m_MethodName: UseEve
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 884599108}
+        m_TargetAssemblyTypeName: SkillCDVisual, Assembly-CSharp
+        m_MethodName: RestartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  eventToTrigger: []
+  triggerFunc: 1
+  triggerEvent: 0
+  preventMultipleActivations: 0
 --- !u!1 &1800629423
 GameObject:
   m_ObjectHideFlags: 0

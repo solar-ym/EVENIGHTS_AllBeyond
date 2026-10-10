@@ -46,12 +46,14 @@ public class Character : GameEntity
     protected float internalSkillCD = 0.0f;
     protected float internalEveCD = 0.0f;
 
+    private Rigidbody2D rb;
     protected override void Start()
     {
         base.Start();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
 
         activePlayer = GetComponentInParent<Player>();
 
@@ -62,6 +64,8 @@ public class Character : GameEntity
         speed = movementSpeed;
 
         currentHP = health;
+
+        originalSpeed = speed;
     }
 
     protected override void Update()
@@ -76,6 +80,7 @@ public class Character : GameEntity
         // Cooldown timers
         if (internalNormalCD < 50f) internalNormalCD += Time.deltaTime;
         if (internalSkillCD < 50f) internalSkillCD += Time.deltaTime;
+        if (internalEveCD < 50f) internalEveCD += Time.deltaTime;
 
         if (movementLock) {
             lockTime += Time.deltaTime;
@@ -109,7 +114,8 @@ public class Character : GameEntity
         {
             spriteRenderer.flipX = joystick.Direction.x > 0 ? true : false;
 
-            transform.position += joystick.GetDirAsVec3() * speed * Time.deltaTime; 
+            rb.AddForce(joystick.GetDirAsVec3() * speed);
+            //transform.position += joystick.GetDirAsVec3() * speed * Time.deltaTime; 
         }
     }
 
@@ -134,14 +140,16 @@ public class Character : GameEntity
         if (distanceToTarget >= dist)
         {
             Vector3 step = newDir * speed * Time.deltaTime;
-            transform.position += newDir * speed * Time.deltaTime;
+            //transform.position += newDir * speed * Time.deltaTime;
+            rb.AddForce(newDir * speed);
             isMoving = true;
         }
         else if (activePlayer.inCombat && distanceToTarget < enemyTrackDistance - distanceBuffer ||
             !activePlayer.inCombat && distanceToTarget < trackDistance/2 - distanceBuffer)
         {
             newDir *= -1;
-            transform.position += newDir * speed * Time.deltaTime;
+            //transform.position += newDir * speed * Time.deltaTime;
+            rb.AddForce(newDir * speed);
             isMoving = true;
         }
         else if (!joystick.isDragging && !activePlayer.inCombat)
@@ -175,11 +183,24 @@ public class Character : GameEntity
     public virtual void UseNormalAttack() {
         FindEnemyTarget();
         movementLock = true;
+
+        ResetAnimTriggers();
+        animator.SetTrigger("Normal");
     }
-    public virtual void UseEve() { }
+    public virtual void UseEve() 
+    {
+        FindEnemyTarget();
+        movementLock = true;
+
+        ResetAnimTriggers();
+        animator.SetTrigger("Eve");
+    }
     public virtual void UseSkill() {
         FindEnemyTarget();
         movementLock = true;
+
+        ResetAnimTriggers();
+        animator.SetTrigger("Skill");
     }
 
     public void StartCombat()
@@ -200,6 +221,15 @@ public class Character : GameEntity
         target = null;
 
         state = ENTITY_STATE.dead;
+        //animator.SetTrigger("Die");
+    }
+
+    public virtual void Revive()
+    {
+        spriteRenderer.color = Color.white;
+        //ResetAllTriggers();
+
+        state = ENTITY_STATE.idle;
         //animator.SetTrigger("Die");
     }
 
@@ -246,5 +276,18 @@ public class Character : GameEntity
     public float GetEveCD()
     {
         return internalEveCD;
+    }
+
+    // Other
+
+    private void ResetAnimTriggers()
+    {
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            if (param.type == AnimatorControllerParameterType.Trigger)
+            {
+                animator.ResetTrigger(param.name);
+            }
+        }
     }
 }

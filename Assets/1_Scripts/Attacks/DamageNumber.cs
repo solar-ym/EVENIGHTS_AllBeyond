@@ -9,6 +9,7 @@ public class DamageNumber : MonoBehaviour
     [SerializeField] private GameObject cursedDamage;
     [SerializeField] private GameObject holyDamage;
     [SerializeField] private GameObject healText;
+    [SerializeField] private GameObject poisonText;
 
     public void SpawnDamageNumber(DamageCalculator.DAMAGE_TYPE damageType, int damageValue)
     {
@@ -48,6 +49,15 @@ public class DamageNumber : MonoBehaviour
             case (DamageCalculator.DAMAGE_TYPE.holy):
 
                 dmg = Instantiate(holyDamage, this.transform);
+                text = dmg.GetComponent<TextMeshProUGUI>();
+                text.text = damageValue.ToString();
+
+                dmg.transform.localRotation = Quaternion.identity;
+
+                break;
+            case (DamageCalculator.DAMAGE_TYPE.poison):
+
+                dmg = Instantiate(poisonText, this.transform);
                 text = dmg.GetComponent<TextMeshProUGUI>();
                 text.text = damageValue.ToString();
 

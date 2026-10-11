@@ -2832,7 +2832,7 @@ MonoBehaviour:
   resDebuffed: 0
   spdDebuffed: 0
   joystick: {fileID: 1366843196}
-  movementSpeed: 10
+  movementSpeed: 30
   trackDistance: 7
   enemyTrackDistance: 9
   distanceBuffer: 1.5
@@ -3102,7 +3102,7 @@ MonoBehaviour:
   resDebuffed: 0
   spdDebuffed: 0
   joystick: {fileID: 1366843196}
-  movementSpeed: 5
+  movementSpeed: 20
   trackDistance: 3
   enemyTrackDistance: 11
   distanceBuffer: 1.5
@@ -6992,7 +6992,7 @@ MonoBehaviour:
   resDebuffed: 0
   spdDebuffed: 0
   joystick: {fileID: 1366843196}
-  movementSpeed: 8.8
+  movementSpeed: 25
   trackDistance: 3
   enemyTrackDistance: 5
   distanceBuffer: 1.5

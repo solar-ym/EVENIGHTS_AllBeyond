@@ -930,7 +930,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277085630}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
@@ -1783,7 +1783,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &487465311
 Transform:
   m_ObjectHideFlags: 0
@@ -2720,7 +2720,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDamping: 5
+  m_LinearDamping: 4
   m_AngularDamping: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -2832,7 +2832,7 @@ MonoBehaviour:
   resDebuffed: 0
   spdDebuffed: 0
   joystick: {fileID: 1366843196}
-  movementSpeed: 30
+  movementSpeed: 10
   trackDistance: 7
   enemyTrackDistance: 9
   distanceBuffer: 1.5
@@ -2990,7 +2990,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDamping: 5
+  m_LinearDamping: 4
   m_AngularDamping: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -3102,7 +3102,7 @@ MonoBehaviour:
   resDebuffed: 0
   spdDebuffed: 0
   joystick: {fileID: 1366843196}
-  movementSpeed: 20
+  movementSpeed: 5
   trackDistance: 3
   enemyTrackDistance: 11
   distanceBuffer: 1.5
@@ -6880,7 +6880,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDamping: 5
+  m_LinearDamping: 4
   m_AngularDamping: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -6992,7 +6992,7 @@ MonoBehaviour:
   resDebuffed: 0
   spdDebuffed: 0
   joystick: {fileID: 1366843196}
-  movementSpeed: 25
+  movementSpeed: 8.8
   trackDistance: 3
   enemyTrackDistance: 5
   distanceBuffer: 1.5

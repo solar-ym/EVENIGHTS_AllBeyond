@@ -114,8 +114,11 @@ public class Character : GameEntity
         {
             spriteRenderer.flipX = joystick.Direction.x > 0 ? true : false;
 
-            rb.AddForce(joystick.GetDirAsVec3() * speed);
-            //transform.position += joystick.GetDirAsVec3() * speed * Time.deltaTime; 
+            Vector3 newDir = joystick.GetDirAsVec3() * PersistentValues.speedMultiplier;
+            rb.AddForce(newDir * speed * Time.deltaTime);
+            //Vector3 step = transform.position + (joystick.GetDirAsVec3() * speed * Time.deltaTime);
+            //rb.MovePosition(step);
+            //transform.position += joystick.GetDirAsVec3() * speed * Time.deltaTime;
         }
     }
 
@@ -139,9 +142,9 @@ public class Character : GameEntity
 
         if (distanceToTarget >= dist)
         {
-            Vector3 step = newDir * speed * Time.deltaTime;
             //transform.position += newDir * speed * Time.deltaTime;
-            rb.AddForce(newDir * speed);
+
+            rb.AddForce(newDir * speed * Time.deltaTime * PersistentValues.speedMultiplier);
             isMoving = true;
         }
         else if (activePlayer.inCombat && distanceToTarget < enemyTrackDistance - distanceBuffer ||
@@ -149,7 +152,7 @@ public class Character : GameEntity
         {
             newDir *= -1;
             //transform.position += newDir * speed * Time.deltaTime;
-            rb.AddForce(newDir * speed);
+            rb.AddForce(newDir * speed * Time.deltaTime * PersistentValues.speedMultiplier);
             isMoving = true;
         }
         else if (!joystick.isDragging && !activePlayer.inCombat)

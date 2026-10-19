@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     [Header("Config")]
     [SerializeField] private float maxCharDistance = 20.0f;
     [SerializeField] private bool keyboard = true;
+    [SerializeField] public float entropyGain = 0.01f;
 
     private List<Character> characters = new List<Character>();
     private int activeCharIndex = 0;
@@ -27,6 +28,8 @@ public class Player : MonoBehaviour
     private int level = 1;
     private int experiencePts = 0;
     private int nextExpCap = 100;
+    // Entropy 
+    public float entropy = 0.0f;
 
     private List<FLAT_BUFF> buffList = new List<FLAT_BUFF>();
 
@@ -140,6 +143,16 @@ public class Player : MonoBehaviour
                 characters[i].isSelected = false;
             }
         }
+    }
+
+    public void AddEntropy()
+    {
+        entropy = Mathf.Clamp01(entropy + entropyGain);
+    }
+
+    public void DrainEntropy()
+    {
+        entropy = 0;
     }
 
     public Character GetActiveCharacter()

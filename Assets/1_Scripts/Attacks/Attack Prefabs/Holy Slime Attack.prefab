@@ -111,8 +111,10 @@ MonoBehaviour:
   speed: 4
   ranged: 1
   pierce: 0
-  trackTarget: 0
-  dmgType: 3
+  dmgType: 0
+  inflictSlow: 0
+  inflictPoison: 0
+  poisonModifer: 0.01
   hasAdditionalAttack: 0
   staticAttack: 1
   nextAttackSpawner: {fileID: 0}

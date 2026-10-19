@@ -41,6 +41,7 @@ public class ActionBar : MonoBehaviour
             if (skill.timer >= skill.cooldown)
             {
                 skill.timer = 0;
+                skill.fill.fillAmount = 0;
                 skill.running = false;
 
                 continue;

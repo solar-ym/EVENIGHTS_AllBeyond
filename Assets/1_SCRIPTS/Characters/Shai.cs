@@ -85,7 +85,7 @@ public class Shai : Character
     }
     public override void UseEve() 
     {
-        if (internalEveCD < eveCD || state == ENTITY_STATE.dead) return;
+        if (internalEveCD < eveCD || state == ENTITY_STATE.dead || activePlayer.entropy == 0) return;
         base.UseEve();
 
         Vector3 dir = Vector3.zero;
@@ -105,9 +105,12 @@ public class Shai : Character
         StartCoroutine(InternalEve(dir));
 
         // Atk buff
-        int atkBuffVal = Mathf.FloorToInt(magic * (0.3f));
+        int atkBuffVal = Mathf.FloorToInt(magic * (0.3f + (eveLevel * 0.05f)));
         activePlayer.BuffAllCharacters(GameEntity.STATS.atk, atkBuffVal, 10.0f);
         activePlayer.BuffAllCharacters(GameEntity.STATS.res, atkBuffVal, 10.0f);
+
+        // Entropy Drain
+        activePlayer.DrainEntropy();
 
         internalEveCD = 0.0f;
     }
@@ -133,15 +136,18 @@ public class Shai : Character
         skillAttack.SpawnAttack(dir);
 
         // Atk buff
-        int atkBuffVal = Mathf.FloorToInt(magic * (0.3f));
+        int atkBuffVal = Mathf.FloorToInt(magic * (0.3f + (skillLevel * 0.05f)));
         activePlayer.BuffAllCharacters(GameEntity.STATS.atk, atkBuffVal, 6.0f);
+
+        // Entropy Gain
+        activePlayer.AddEntropy();
 
         internalSkillCD = 0.0f;
     }
 
     private IEnumerator InternalEve(Vector3 dir)
     {
-        int damageBoost = Mathf.CeilToInt(0.5f * magic);
+        int damageBoost = Mathf.CeilToInt((0.5f + (eveLevel * 0.05f) + activePlayer.entropy) * magic);
         for (int i = 0; i < 3; i++)
         {
             eveAttack.SpawnAttack(dir, damageBoost);

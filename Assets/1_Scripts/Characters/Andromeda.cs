@@ -89,7 +89,7 @@ public class Andromeda : Character
     }
     public override void UseEve()
     {
-        if (internalEveCD < eveCD || state == ENTITY_STATE.dead) return;
+        if (internalEveCD < eveCD || state == ENTITY_STATE.dead || activePlayer.entropy == 0) return;
         base.UseEve();
 
         Vector3 dir = Vector3.zero;
@@ -106,13 +106,16 @@ public class Andromeda : Character
         dir = trackPos - this.transform.position;
         dir.Normalize();
 
-        int damageBoost = Mathf.CeilToInt(0.5f * attack);
+        int damageBoost = Mathf.CeilToInt((0.5f + activePlayer.entropy + (eveLevel * 0.05f)) * attack);
         eveAttack.SpawnAttack(dir, damageBoost);
 
         activePlayer.ReviveAllCharacters();
 
-        int otherHealVal = Mathf.CeilToInt(8.0f * magic);
+        int otherHealVal = Mathf.CeilToInt((8.0f + activePlayer.entropy + (eveLevel * 0.05f)) * magic);
         activePlayer.HealAllCharacters(otherHealVal);
+
+        // Entropy Drain
+        activePlayer.DrainEntropy();
 
         internalEveCD = 0.0f;
     }
@@ -122,11 +125,14 @@ public class Andromeda : Character
 
         base.UseSkill();
 
-        int healValue = Mathf.CeilToInt(magic * (1.3f));
+        int healValue = Mathf.CeilToInt(magic * (1.3f + (skillLevel * 0.05f)));
         activePlayer.HealAllCharacters(healValue);
 
-        int resBuffVal = Mathf.FloorToInt(magic * (0.3f));
+        int resBuffVal = Mathf.FloorToInt(magic * (0.3f + (skillLevel * 0.05f)));
         activePlayer.BuffAllCharacters(GameEntity.STATS.res, resBuffVal, 10.0f);
+
+        // Entropy Gain
+        activePlayer.AddEntropy();
 
         internalSkillCD = 0.0f;
     }

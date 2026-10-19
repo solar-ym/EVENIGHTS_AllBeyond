@@ -78,7 +78,11 @@ public class Claure : Character
     }
     public override void UseNormalAttack() {
         if (internalNormalCD < normalCD || state == ENTITY_STATE.dead) return;
-        base.UseNormalAttack();
+
+        FindEnemyTarget();
+        movementLock = true;
+
+        ResetAnimTriggers();
 
         Vector3 dir = Vector3.zero;
         Vector3 trackPos;
@@ -97,17 +101,19 @@ public class Claure : Character
         if (!isInSpecialEveState)
         {
             normalAttack.SpawnAttack(dir);
+            animator.SetTrigger("Normal");
         } else
         {
-            int damageBoost = Mathf.CeilToInt(1.5f * magic);
+            int damageBoost = Mathf.CeilToInt(1.5f + (eveLevel * 0.05f) * magic);
             specialNormalAttack.SpawnAttack(dir,  damageBoost);
+            animator.SetTrigger("Eve");
         }
 
             internalNormalCD = 0.0f;
     }
     public override void UseEve()
     {
-        if (internalEveCD < eveCD || state == ENTITY_STATE.dead) return;
+        if (internalEveCD < eveCD || state == ENTITY_STATE.dead || activePlayer.entropy == 0) return;
         base.UseEve();
 
         Vector3 dir = Vector3.zero;
@@ -124,10 +130,13 @@ public class Claure : Character
         dir = trackPos - this.transform.position;
         dir.Normalize();
 
-        int damageBoost = Mathf.CeilToInt(2.0f * magic);
+        int damageBoost = Mathf.CeilToInt((2.0f + (eveLevel * 0.05f) + activePlayer.entropy) * magic);
         eveAttack.SpawnAttack(dir);
 
         isInSpecialEveState = true;
+
+        // Entropy Drain
+        activePlayer.DrainEntropy();
 
         internalEveCD = 0.0f;
     }
@@ -153,8 +162,11 @@ public class Claure : Character
         skillAttack.SpawnAttack(dir);
 
         // Buff res
-        int resBuffVal = Mathf.FloorToInt(magic * (0.6f));
+        int resBuffVal = Mathf.FloorToInt(magic * (0.6f + (skillLevel * 0.05f)));
         AddBuff(STATS.res, resBuffVal, 1, 3.0f);
+
+        // Entropy Gain
+        activePlayer.AddEntropy();
 
         internalSkillCD = 0.0f;
     }

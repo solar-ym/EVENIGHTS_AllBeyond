@@ -20,7 +20,7 @@ public class Character : GameEntity
 
     // Visuals
     public SpriteRenderer spriteRenderer;
-    private Animator animator;
+    protected Animator animator;
 
     // Stats
     [Header("Starting Stats")]
@@ -29,6 +29,11 @@ public class Character : GameEntity
     [SerializeField] private int startingMagic = 5;
     [SerializeField] private int startingResist = 5;
     [SerializeField] private int sp = 0;
+
+    // Skill levels
+    [Header("Skill Levels")]
+    public int skillLevel = 0;
+    public int eveLevel = 0;
 
     // Movement
     [Header("View Only")]
@@ -283,7 +288,7 @@ public class Character : GameEntity
 
     // Other
 
-    private void ResetAnimTriggers()
+    protected void ResetAnimTriggers()
     {
         foreach (AnimatorControllerParameter param in animator.parameters)
         {

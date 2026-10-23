@@ -117,13 +117,21 @@ public class Character : GameEntity
 
         if (isMoving)
         {
-            spriteRenderer.flipX = joystick.Direction.x > 0 ? true : false;
+            if (activePlayer.inCombat && target != null)
+            {
+                Vector3 targetDir = target.transform.position - this.transform.position;
 
-            Vector3 newDir = joystick.GetDirAsVec3() * PersistentValues.speedMultiplier;
+                spriteRenderer.flipX = targetDir.x > 0 ? true : false;
+            } else
+            {
+                spriteRenderer.flipX = joystick.Direction.x > 0 ? true : false;
+            }
+
+            Vector3 newDir = joystick.GetDirAsVec3();
+            if (newDir.magnitude > 1) newDir.Normalize();
+
+            newDir *= PersistentValues.speedMultiplier * newDir.magnitude;
             rb.AddForce(newDir * speed * Time.deltaTime);
-            //Vector3 step = transform.position + (joystick.GetDirAsVec3() * speed * Time.deltaTime);
-            //rb.MovePosition(step);
-            //transform.position += joystick.GetDirAsVec3() * speed * Time.deltaTime;
         }
     }
 
@@ -133,8 +141,9 @@ public class Character : GameEntity
         if (target == null) return;
 
         Vector3 newDir = Vector3.zero;
-        Vector3 joystickDir = new Vector3(joystick.Direction.x, joystick.Direction.y, 0.0f);
-        Vector3 trackPos = target.transform.position + (joystick.GetDirAsVec3());
+        //Vector3 joystickDir = new Vector3(joystick.Direction.x, joystick.Direction.y, 0.0f);
+        //Vector3 trackPos = target.transform.position + (joystick.GetDirAsVec3());
+        Vector3 trackPos = target.transform.position;
 
         newDir = trackPos - this.transform.position;
         newDir.Normalize();
@@ -147,8 +156,6 @@ public class Character : GameEntity
 
         if (distanceToTarget >= dist)
         {
-            //transform.position += newDir * speed * Time.deltaTime;
-
             rb.AddForce(newDir * speed * Time.deltaTime * PersistentValues.speedMultiplier);
             isMoving = true;
         }
@@ -156,7 +163,6 @@ public class Character : GameEntity
             !activePlayer.inCombat && distanceToTarget < trackDistance/2 - distanceBuffer)
         {
             newDir *= -1;
-            //transform.position += newDir * speed * Time.deltaTime;
             rb.AddForce(newDir * speed * Time.deltaTime * PersistentValues.speedMultiplier);
             isMoving = true;
         }

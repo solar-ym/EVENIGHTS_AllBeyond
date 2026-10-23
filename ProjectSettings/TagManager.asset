@@ -43,6 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Shadows
+    uniqueID: 2959600613
+    locked: 0
   - name: Enemy Behind
     uniqueID: 229190037
     locked: 0

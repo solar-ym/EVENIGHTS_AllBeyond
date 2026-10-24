@@ -31,7 +31,13 @@ public class EntropyBar : MonoBehaviour
 
         if (chromaticAberration.profile.TryGet<ChromaticAberration>(out chroma))
         {
-            chroma.intensity.value = Mathf.Clamp01(barFill.fillAmount / 2);
+            if (!player.inCombat && chroma.intensity.value > 0.0f)
+            {
+                chroma.intensity.value = Mathf.Clamp01(chroma.intensity.value - 0.01f);
+            } else
+            {
+                chroma.intensity.value = Mathf.Clamp01(barFill.fillAmount / 2);
+            }
         }
     }
 }

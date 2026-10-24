@@ -85,7 +85,7 @@ public class Shai : Character
     }
     public override void UseEve() 
     {
-        if (internalEveCD < eveCD || state == ENTITY_STATE.dead || activePlayer.entropy == 0) return;
+        if (internalEveCD < eveCD || state == ENTITY_STATE.dead || activePlayer.entropy < 1.0f) return;
         base.UseEve();
 
         Vector3 dir = Vector3.zero;

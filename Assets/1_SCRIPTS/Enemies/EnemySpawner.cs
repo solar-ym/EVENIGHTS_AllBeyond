@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public GameObject projectileHolder;
     public GameObject enemyToSpawn;
     public GameObject spawnPoint;
     public float spawnTimer = 10.0f;
@@ -14,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject enemy = Instantiate(enemyToSpawn, this.transform);
 
         enemy.GetComponent<Enemy>().spawnPoint = spawnPoint;
+        enemy.GetComponent<Enemy>().projectileHolder = projectileHolder;
     }
 
     private void Update()

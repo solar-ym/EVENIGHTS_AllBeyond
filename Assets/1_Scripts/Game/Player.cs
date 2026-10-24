@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxCharDistance = 20.0f;
     [SerializeField] private bool keyboard = true;
     [SerializeField] public float entropyGain = 0.01f;
+    public float dashCooldown = 3.0f;
 
     private List<Character> characters = new List<Character>();
     private int activeCharIndex = 0;
@@ -33,9 +34,15 @@ public class Player : MonoBehaviour
 
     private List<FLAT_BUFF> buffList = new List<FLAT_BUFF>();
 
+    // Dash
+    [HideInInspector] public float internalDashCD = 0.0f;
+    [HideInInspector] public bool dashed = false;
+
     void Start()
     {
-        characters.AddRange(GetComponentsInChildren<Character>());   
+        characters.AddRange(GetComponentsInChildren<Character>());
+        PersistentValues.isKeyboard = keyboard;
+        Debug.Log("keyboard" + PersistentValues.isKeyboard);
     }
 
     private void Update()
@@ -45,6 +52,7 @@ public class Player : MonoBehaviour
         xpBarFill.fillAmount = experiencePts / (float)nextExpCap;
 
         PollBuffs();
+        if (PersistentValues.isKeyboard) PollKeyboardInputs();
 
         if (!inCombat) return;
         
@@ -68,19 +76,31 @@ public class Player : MonoBehaviour
                 inCombat = false; break;
             } 
         }
+    }
 
-        if (keyboard)
+    private void PollKeyboardInputs()
+    {
+        if (Keyboard.current.wKey.wasPressedThisFrame)
         {
-
-            if (Keyboard.current.wKey.wasPressedThisFrame)
+            characters[activeCharIndex].FindEnemyTarget();
+            characters[activeCharIndex].UseNormalAttack();
+        }
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            characters[activeCharIndex].FindEnemyTarget();
+            characters[activeCharIndex].UseSkill();
+        }
+        if (Keyboard.current.qKey.wasPressedThisFrame)
+        {
+            characters[activeCharIndex].FindEnemyTarget();
+            characters[activeCharIndex].UseEve();
+        }
+        if (Keyboard.current.shiftKey.wasPressedThisFrame)
+        {
+            if (internalDashCD >= dashCooldown)
             {
-                characters[activeCharIndex].FindEnemyTarget();
-                characters[activeCharIndex].UseNormalAttack();
-            }
-            if (Keyboard.current.eKey.wasPressedThisFrame)
-            {
-                characters[activeCharIndex].FindEnemyTarget();
-                characters[activeCharIndex].UseSkill();
+                GetActiveCharacter().Dash(GetActiveCharacter().joystick.GetDirAsVec3());
+                dashed = true;
             }
         }
     }

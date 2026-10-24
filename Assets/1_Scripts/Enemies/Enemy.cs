@@ -19,9 +19,13 @@ public class Enemy : GameEntity
 
     [Header("Attacks")]
     [SerializeField] AttackSpawner normalAttack;
+    [SerializeField] AttackSpawner skillAttack;
+    [SerializeField] AttackSpawner eveAttack;
 
     [Header("Attack Cooldowns")]
     [SerializeField] private float normalCD = 0.5f;
+    [SerializeField] private float skillCD = 0.5f;
+    [SerializeField] private float eveCD = 0.5f;
 
     [Header("Stat Ranges")]
     [SerializeField] int minHP = 10;
@@ -34,6 +38,7 @@ public class Enemy : GameEntity
     [SerializeField] float maxSpd = 5;
 
     private Character target;
+    [HideInInspector] public GameObject projectileHolder;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -61,6 +66,10 @@ public class Enemy : GameEntity
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        normalAttack.projectileHolder = projectileHolder;
+        if (skillAttack != null) skillAttack.projectileHolder = projectileHolder;
+        if (eveAttack != null) eveAttack.projectileHolder = projectileHolder;
     }
 
     protected override void Update()
@@ -89,12 +98,24 @@ public class Enemy : GameEntity
         else if (state == ENTITY_STATE.attacking && WithinSpawnRange())
         {
             internalNormalCD += Time.deltaTime;
+            internalSkillCD += Time.deltaTime;
+            internalEveCD += Time.deltaTime;
 
             TrackActiveTarget();
             if (internalNormalCD >= normalCD)
             {
                 UseNormalAttack();
                 internalNormalCD = 0.0f;
+            }
+            if (internalSkillCD >= skillCD && skillAttack != null)
+            {
+                UseSkill();
+                internalSkillCD = 0.0f;
+            }
+            if (internalEveCD >= eveCD && eveAttack != null)
+            {
+                UseEve();
+                internalEveCD = 0.0f;
             }
         }
     }
@@ -181,7 +202,21 @@ public class Enemy : GameEntity
         normalAttack.SpawnAttack(dir);
     }
     protected virtual void UseEve() { }
-    protected virtual void UseSkill() { }
+    protected virtual void UseSkill() 
+    {
+        if (state != ENTITY_STATE.attacking || target == null) return;
+
+        ResetAllTriggers();
+        animator.SetTrigger("Skill");
+
+        Vector3 dir = Vector3.zero;
+        Vector3 trackPos = target.transform.position;
+
+        dir = trackPos - this.transform.position;
+        dir.Normalize();
+
+        skillAttack.SpawnAttack(dir);
+    }
 
     protected virtual void Die()
     {
@@ -203,6 +238,7 @@ public class Enemy : GameEntity
     protected virtual void ResetAllTriggers()
     {
         animator.ResetTrigger("Normal");
+        animator.ResetTrigger("Skill");
     }
 
     // STAT MANIP -------------------------------------------------------------------

@@ -50,4 +50,5 @@ public class ActionBar : MonoBehaviour
             skill.fill.fillAmount = 1 - (skill.timer / skill.cooldown);
         }
     }
+
 }

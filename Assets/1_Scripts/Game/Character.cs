@@ -8,12 +8,13 @@ using static Enemy;
 public class Character : GameEntity
 {
     [Header("Movement")]
-    [SerializeField] protected FixedJoystick joystick;
+    [SerializeField] public FixedJoystick joystick;
     [SerializeField] private float movementSpeed = 2.5f;
     [SerializeField] private float trackDistance = 1.5f;
     [SerializeField] private float enemyTrackDistance = 1.5f;
     [SerializeField] private float distanceBuffer = 1.5f;
     [SerializeField] private float moveLockDuration = 1.0f;
+    [SerializeField] private float dashSpeed = 2.5f;
 
     [Header("Selection")]
     public bool isSelected = false;
@@ -128,9 +129,9 @@ public class Character : GameEntity
             }
 
             Vector3 newDir = joystick.GetDirAsVec3();
-            if (newDir.magnitude > 1) newDir.Normalize();
+            newDir.Normalize();
 
-            newDir *= PersistentValues.speedMultiplier * newDir.magnitude;
+            newDir *= PersistentValues.speedMultiplier;
             rb.AddForce(newDir * speed * Time.deltaTime);
         }
     }
@@ -176,6 +177,14 @@ public class Character : GameEntity
     public bool GetFlipped()
     {
         return spriteRenderer.flipX;
+    }
+
+    public void Dash(Vector3 direction)
+    {
+        direction.Normalize();
+
+
+        rb.AddForce(direction * dashSpeed * PersistentValues.speedMultiplier);
     }
 
     // COMBAT -----------------------------------------------------------------------

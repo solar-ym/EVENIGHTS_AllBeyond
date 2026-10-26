@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
@@ -9,12 +10,12 @@ public class Character : GameEntity
 {
     [Header("Movement")]
     [SerializeField] public FixedJoystick joystick;
-    [SerializeField] private float movementSpeed = 2.5f;
+    [SerializeField] public float movementSpeed = 2.5f;
     [SerializeField] private float trackDistance = 1.5f;
     [SerializeField] private float enemyTrackDistance = 1.5f;
     [SerializeField] private float distanceBuffer = 1.5f;
     [SerializeField] private float moveLockDuration = 1.0f;
-    [SerializeField] private float dashSpeed = 2.5f;
+    [SerializeField] public float dashSpeed = 2.5f;
 
     [Header("Selection")]
     public bool isSelected = false;
@@ -29,7 +30,7 @@ public class Character : GameEntity
     [SerializeField] private int startingAttack = 5;
     [SerializeField] private int startingMagic = 5;
     [SerializeField] private int startingResist = 5;
-    [SerializeField] private int sp = 0;
+    [SerializeField] public int sp = 0;
 
     // Skill levels
     [Header("Skill Levels")]
@@ -51,6 +52,8 @@ public class Character : GameEntity
     protected float internalNormalCD = 0.0f;
     protected float internalSkillCD = 0.0f;
     protected float internalEveCD = 0.0f;
+
+    private bool dashing = false;
 
     private Rigidbody2D rb;
     protected override void Start()
@@ -116,7 +119,7 @@ public class Character : GameEntity
         isMoving = joystick.isDragging;
         animator.SetBool("isMoving", isMoving);
 
-        if (isMoving)
+        if (isMoving && !dashing)
         {
             if (activePlayer.inCombat && target != null)
             {
@@ -142,8 +145,6 @@ public class Character : GameEntity
         if (target == null) return;
 
         Vector3 newDir = Vector3.zero;
-        //Vector3 joystickDir = new Vector3(joystick.Direction.x, joystick.Direction.y, 0.0f);
-        //Vector3 trackPos = target.transform.position + (joystick.GetDirAsVec3());
         Vector3 trackPos = target.transform.position;
 
         newDir = trackPos - this.transform.position;
@@ -179,12 +180,20 @@ public class Character : GameEntity
         return spriteRenderer.flipX;
     }
 
-    public void Dash(Vector3 direction)
+    public void Dash()
     {
-        direction.Normalize();
+        rb.AddForce(joystick.GetDirAsVec3() * dashSpeed * PersistentValues.speedMultiplier);
 
+        dashing = true;
 
-        rb.AddForce(direction * dashSpeed * PersistentValues.speedMultiplier);
+        StartCoroutine(WaitDash());
+    }
+
+    private IEnumerator WaitDash()
+    {
+        yield return new WaitForSeconds(0.8f);
+
+        dashing = false;
     }
 
     // COMBAT -----------------------------------------------------------------------
@@ -312,5 +321,18 @@ public class Character : GameEntity
                 animator.ResetTrigger(param.name);
             }
         }
+    }
+
+    // Enums
+
+    public enum DISPLAY_STATS
+    {
+        atk = 0,
+        mag,
+        res,
+        maxHP,
+        sp,
+        spd,
+        dashSpd
     }
 }

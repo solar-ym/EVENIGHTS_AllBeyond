@@ -99,7 +99,8 @@ public class Player : MonoBehaviour
         {
             if (internalDashCD >= dashCooldown)
             {
-                GetActiveCharacter().Dash(GetActiveCharacter().joystick.GetDirAsVec3());
+                GetActiveCharacter().Dash();
+
                 dashed = true;
             }
         }
@@ -178,6 +179,11 @@ public class Player : MonoBehaviour
     public Character GetActiveCharacter()
     {
         return characters[activeCharIndex];
+    }
+
+    public Character GetThisCharacter(int i)
+    {
+        return characters[i];
     }
 
     public bool GetIsActiveMoving()

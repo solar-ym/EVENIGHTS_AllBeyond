@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1839018889
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 9174701774382284854, guid: d31c60ed9bf80c94cafb4c25bd188c8d, type: 3}
@@ -111,8 +111,10 @@ MonoBehaviour:
   speed: 0
   ranged: 0
   pierce: 1
-  trackTarget: 0
   dmgType: 1
+  inflictSlow: 0
+  inflictPoison: 0
+  poisonModifer: 0.01
   hasAdditionalAttack: 0
   staticAttack: 1
   nextAttackSpawner: {fileID: 0}
@@ -152,4 +154,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.86
+  m_Radius: 1.8

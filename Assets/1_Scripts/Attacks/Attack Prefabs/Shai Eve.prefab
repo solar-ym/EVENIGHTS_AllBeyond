@@ -107,6 +107,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shai Attack
       objectReference: {fileID: 0}
+    - target: {fileID: 1620337303823266849, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620337303823266849, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.8301325
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620337303823266849, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2612370069582340373, guid: 4f2f048e7af87004c859e2101718985f, type: 3}
       propertyPath: m_Sprite
       value: 

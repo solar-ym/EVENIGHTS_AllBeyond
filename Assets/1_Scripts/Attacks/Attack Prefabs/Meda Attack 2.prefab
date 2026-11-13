@@ -112,7 +112,7 @@ MonoBehaviour:
   ranged: 0
   pierce: 1
   dmgType: 1
-  inflictSlow: 0
+  inflictSlow: 1
   inflictPoison: 0
   poisonModifer: 0.01
   hasAdditionalAttack: 0

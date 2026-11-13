@@ -113,8 +113,8 @@ MonoBehaviour:
   pierce: 1
   dmgType: 2
   inflictSlow: 0
-  inflictPoison: 0
-  poisonModifer: 0.01
+  inflictPoison: 1
+  poisonModifer: 0.03
   hasAdditionalAttack: 0
   staticAttack: 0
   nextAttackSpawner: {fileID: 0}

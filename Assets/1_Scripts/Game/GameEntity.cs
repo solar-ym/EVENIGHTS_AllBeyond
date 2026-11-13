@@ -38,10 +38,12 @@ public class GameEntity : MonoBehaviour
 
     private DamageNumber numberDisplaySpawner;
     protected float originalSpeed = 0.0f;
+    private VisualEntityAttacked macroAnim;
 
     protected virtual void Start()
     {
         numberDisplaySpawner = GetComponentInChildren<DamageNumber>();
+        macroAnim = GetComponent<VisualEntityAttacked>();
     }
 
     protected virtual void Update()
@@ -106,6 +108,10 @@ public class GameEntity : MonoBehaviour
         if (val > 0)
         {
             numberDisplaySpawner.SpawnHealText(val);
+        }
+        else
+        {
+            if (macroAnim != null) macroAnim.OnHit();
         }
     }
 
